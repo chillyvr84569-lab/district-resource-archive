@@ -1,18 +1,14 @@
-/** * CLEAN PORTAL ENGINE 
- * Bypasses GoGuardian by using direct navigation and no obfuscation.
- */
-
 const container = document.getElementById('game-container');
 const searchBar = document.getElementById('search-bar');
 
-// Load the resources from your JSON file
+// Fetch the game data
 fetch('./games.json')
     .then(res => res.json())
     .then(data => {
         window.allItems = data;
         renderCards(data);
     })
-    .catch(err => console.error("Error loading resources:", err));
+    .catch(err => console.error("Error loading JSON:", err));
 
 function renderCards(data) {
     if (!container) return;
@@ -27,13 +23,12 @@ function renderCards(data) {
         `;
         
         card.onclick = () => {
-            // This is the "Clean Tab" method to strip referrers
+            // about:blank is a classic trick to strip the 'referrer' (where you came from)
             const win = window.open('about:blank', '_blank');
             if (win) {
                 win.opener = null;
                 win.location.href = item.url;
             } else {
-                // Fallback if pop-up is blocked
                 window.location.href = item.url;
             }
         };
@@ -52,9 +47,9 @@ if (searchBar) {
     };
 }
 
-// Panic Key: Press '~' to instantly switch to Google Classroom
+// Panic Key: Press '~' to swap to a safe page
 window.addEventListener('keydown', (e) => {
-    if (e.key === '~' || e.key === '`') {
+    if (e.key === '~') {
         window.location.replace("https://classroom.google.com");
     }
 });
