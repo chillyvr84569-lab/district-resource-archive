@@ -4,7 +4,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .logo span { color: #38bdf8; }
 #search-bar { padding: 10px 15px; border-radius: 20px; border: none; width: 250px; outline: none; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; padding: 30px; }
-.game-card { background: #1e293b; border-radius: 12px; padding: 15px; text-align: center; cursor: pointer; transition: 0.2s; border: 1px solid transparent; }
+.game-card { cursor: pointer; }
 .game-card:hover { transform: scale(1.05); border-color: #38bdf8; }
 .game-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
 #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); display: flex; z-index: 1000; }
