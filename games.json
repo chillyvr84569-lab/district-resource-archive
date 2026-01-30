@@ -1,0 +1,8 @@
+[
+  { "title": "Roblox", "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg", "url": "https://www.roblox.com", "category": "proxy" },
+  { "title": "Snapchat", "thumb": "https://accounts.snapchat.com/accounts/static/images/ghost/snapchat-app-icon.png", "url": "https://www.snapchat.com/web", "category": "proxy" },
+  { "title": "Instagram", "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png", "url": "https://www.instagram.com", "category": "proxy" },
+  { "title": "Steam", "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg", "url": "https://store.steampowered.com", "category": "proxy" },
+  { "title": "123Movies", "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Netflix_logo.svg/800px-Netflix_logo.svg.png", "url": "https://ww4.123moviesfree.net", "category": "proxy" },
+  { "title": "Poki Games", "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=316,height=316,fit=cover,g=0.5x0.5,f=auto/b7433299-4d8b-4a38-8e6d-74d445350c33.png", "url": "https://poki.com", "category": "iframe" }
+]
