@@ -4,8 +4,5 @@
   { "title": "TikTok", "thumb": "https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg", "url": "https://urlebird.com", "type": "new" },
   { "title": "Roblox", "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg", "url": "https://now.gg/apps/roblox-corporation/5349/roblox.html", "type": "new" },
   { "title": "Google", "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg", "url": "https://www.google.com", "type": "new" },
-  { "title": "Steam Store", "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Steam.png", "url": "https://store.steampowered.com/search/", "type": "new" },
-  { "title": "BitLife (Steam Ver)", "thumb": "https://play-lh.googleusercontent.com/9iS7f9fV7G6W3R7Z8S-A8vH9Xb407R2mCj8U-Xm_20-y8R8S-A8vH9Xb407R2mCj8U", "url": "https://bitlifeonline.github.io", "type": "new" },
-  { "title": "1v1.LOL", "thumb": "https://play-lh.googleusercontent.com/vH_F-6vv8F7vC7_V_S6-7R_v_v-v_v-v_v-v_v-v_v-v_v-v_v-v_v-v_v-v_v-v_v-v_v-v", "url": "https://1v1.lol", "type": "new" },
-  { "title": "Retro Bowl", "thumb": "https://play-lh.googleusercontent.com/4S0_v_S6-7R_v_v-v_v-v_v-v_v-v_v-v_v-v_v-v_v-v_v-v_v-v_v-v_v-v_v-v_v-v", "url": "https://game316.github.io/rb1/", "type": "new" }
+  { "title": "Steam Store", "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Steam.png", "url": "https://store.steampowered.com/search/", "type": "new" }
 ]
