@@ -1,7 +1,7 @@
 [
-  { "title": "Photo Research", "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png", "url": "https://www.instagram.com/?variant=pastry", "type": "new" },
-  { "title": "Social Comms", "thumb": "https://accounts.snapchat.com/accounts/static/images/ghost/snapchat-app-icon.png", "url": "https://web.snapchat.com", "type": "new" },
-  { "title": "Short Video Lab", "thumb": "https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg", "url": "https://tikvid.io", "type": "new" },
-  { "title": "Physics Engine", "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg", "url": "https://now.gg/apps/roblox-corporation/5349/roblox.html", "type": "new" },
-  { "title": "Media Archive", "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Netflix_logo.svg/800px-Netflix_logo.svg.png", "url": "https://ww4.123moviesfree.net", "type": "new" }
+  { "title": "Photo Gallery", "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png", "url": "https://www.picuki.com", "type": "new" },
+  { "title": "Messaging Hub", "thumb": "https://accounts.snapchat.com/accounts/static/images/ghost/snapchat-app-icon.png", "url": "https://web.snapchat.com", "type": "new" },
+  { "title": "Video Research", "thumb": "https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg", "url": "https://urlebird.com", "type": "new" },
+  { "title": "Cloud Compute", "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg", "url": "https://now.gg/apps/roblox-corporation/5349/roblox.html", "type": "new" },
+  { "title": "Resource Search", "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg", "url": "https://search.brave.com", "type": "new" }
 ]
