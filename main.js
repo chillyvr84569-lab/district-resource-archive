@@ -1,4 +1,4 @@
-const proxyBase = "https://gointerstellar.app/d/";
+const proxyBase = "https://tinf.io/service/";
 const container = document.getElementById('game-container');
 const searchBar = document.getElementById('search-bar');
 let allItems = [];
