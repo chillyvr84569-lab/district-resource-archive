@@ -3,11 +3,10 @@
   { "title": "Snapchat", "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Snapchat_logo.svg", "url": "https://web.snapchat.com", "category": "Social Media" },
   { "title": "TikTok", "thumb": "https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg", "url": "https://urlebird.com", "category": "Social Media" },
   { "title": "Roblox (Cloud)", "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg", "url": "https://now.gg/apps/roblox-corporation/5349/roblox.html", "category": "Games" },
-  { "title": "Steam Store", "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Steam.png", "url": "https://store.steampowered.com/search/", "category": "Games" },
+  { "title": "Interstellar", "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Interstellar.png", "url": "https://gointerstellar.app", "category": "Proxies" },
+  { "title": "Rammerhead", "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Rammerhead.png", "url": "https://browser.rammerhead.org", "category": "Proxies" },
+  { "title": "Utopia", "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Utopia.png", "url": "https://utopia.hu.net", "category": "Proxies" },
+  { "title": "CroxyProxy", "thumb": "https://www.croxyproxy.com/favicon.ico", "url": "https://www.croxyproxy.com", "category": "Proxies" },
   { "title": "Poki (Mirror)", "thumb": "https://img.utdstc.com/icon/884/222/8842220409945037d6e499d141684c3793740203f1947b7440898517228a07c4:200", "url": "https://poki.to", "category": "Games" },
-  { "title": "Crazy Games (Mirror)", "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/0e/CrazyGames_logo.png", "url": "https://crazygames.ee", "category": "Games" },
-  { "title": "Hooda Math (Stealth)", "thumb": "https://www.hoodamath.com/favicon.ico", "url": "https://www.hoodamath.com/games/unblocked.html", "category": "Games" },
-  { "title": "YoLearn Proxy", "thumb": "https://tucdn.yolearn.org/favicon.ico", "url": "https://tucdn.yolearn.org/", "category": "Proxies" },
-  { "title": "Resource Doc", "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/01/Google_Docs_logo_%282014-2020%29.svg", "url": "https://docs.google.com/document/d/1J6hZXbQYOKtuaj-j-TP4O8vFMMtROCJJKu-JCRaeXtI/preview", "category": "Movies" },
   { "title": "Google Macro", "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_Apps_Script.svg", "url": "https://script.google.com/macros/s/AKfycbzAaAh5pgA7JxSsHGAx4EsaSqKRf3z1nXWd0YK-OAR-SJRTlsRrQ7DYBGGWwvbJhB6jGg/exec", "category": "Games" }
 ]
