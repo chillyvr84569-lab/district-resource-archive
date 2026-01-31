@@ -21,23 +21,24 @@ function renderCards(data) {
         const filtered = data.filter(item => item.category === cat);
         
         if (filtered.length > 0) {
-            // 1. Create the Section Header
+            // Category Label
             const header = document.createElement('h2');
             header.className = "category-title";
             header.textContent = cat;
             container.appendChild(header);
 
-            // 2. Create the "Fat" Wrapper
+            // Grid wrapper for this category
             const group = document.createElement('div');
-            group.className = "category-group"; // This is the 'Fat Row'
+            group.className = "category-group";
 
             filtered.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'game-card';
                 
+                // We add 'class="card-icon"' to keep them from exploding
                 const iconHtml = (item.thumb && item.thumb.startsWith('http')) 
-                    ? `<img src="${item.thumb}" onerror="this.src='https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Steam.png'">` 
-                    : `<div style="font-size: 40px; padding: 10px;">🎮</div>`;
+                    ? `<img src="${item.thumb}" class="card-icon" onerror="this.src='https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Steam.png'">` 
+                    : `<div class="card-emoji">🎮</div>`;
 
                 card.innerHTML = `
                     <div class="icon-box">${iconHtml}</div>
@@ -53,12 +54,18 @@ function renderCards(data) {
     });
 }
 
-// Clock & Panic Button
+// 24-hour Clock
 setInterval(() => {
     const clock = document.getElementById('clock');
-    if (clock) clock.textContent = new Date().toLocaleTimeString('en-GB');
+    if (clock) {
+        const now = new Date();
+        clock.textContent = now.getHours().toString().padStart(2, '0') + ":" + 
+                           now.getMinutes().toString().padStart(2, '0') + ":" + 
+                           now.getSeconds().toString().padStart(2, '0');
+    }
 }, 1000);
 
+// Panic Button
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') window.location.href = 'https://canvas.instructure.com/login/canvas';
 });
