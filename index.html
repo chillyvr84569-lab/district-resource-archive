@@ -3,32 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>District Resource Archive</title>
+    <title>Resource Library</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="header">
-        <div id="clock">00:00:00</div>
+        <h1>Resource Library</h1>
+        <p class="subtitle">Stillwell Middle School - Supplemental Materials Database</p>
         
-        <h1>District Resource Archive</h1>
+        <div id="clock" class="large-clock">00:00:00</div>
         
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search resources...">
-        </div>
-
-        <div class="tab-container">
-            <button class="tab-btn active" onclick="filterTab('Games')">Games</button>
-            <button class="tab-btn" onclick="filterTab('Social Media')">Social Media</button>
-            <button class="tab-btn" onclick="filterTab('Movies')">Movies</button>
-            <button class="tab-btn" onclick="filterTab('Proxies')">Proxies</button>
+            <input type="text" id="searchInput" placeholder="Search database or enter URL...">
         </div>
     </div>
 
     <div id="games-container" class="container"></div>
 
-    <script src="main.js?v=15"></script>
+    <div class="footer">
+        <p>© 2026 District Educational Board. All rights reserved.</p>
+    </div>
+
+    <script src="main.js?v=18"></script>
 
 </body>
 </html>
