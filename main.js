@@ -57,3 +57,10 @@ function startClock() {
 
 // Kick off the clock
 startClock();
+// The Panic Button Script
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        // This instantly redirects the tab to Canvas
+        window.location.href = 'https://canvas.instructure.com/login/canvas';
+    }
+});
