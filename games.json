@@ -9,5 +9,5 @@
   { "title": "Crazy Games", "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/0e/CrazyGames_logo.png", "url": "https://www.crazygames.com", "category": "Games" },
   { "title": "YoLearn Proxy", "thumb": "https://tucdn.yolearn.org/favicon.ico", "url": "https://tucdn.yolearn.org/", "category": "Proxies" },
   { "title": "Resource Doc", "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/01/Google_Docs_logo_%282014-2020%29.svg", "url": "https://docs.google.com/document/d/1J6hZXbQYOKtuaj-j-TP4O8vFMMtROCJJKu-JCRaeXtI/preview", "category": "Movies" },
-  { "title": "Google Macro", "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_Apps_Script.svg", "url": "https://script.google.com/macros/s/AKfycbzAaAh5pgA7JxSsHGAx4EsaSqKRf3z1nXWd0YK-OAR-SJRTlsRrQ7DYBGGWwvbJhB6jGg/exec", "category": "Proxies" }
+  { "title": "Google Macro", "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_Apps_Script.svg", "url": "https://script.google.com/macros/s/AKfycbzAaAh5pgA7JxSsHGAx4EsaSqKRf3z1nXWd0YK-OAR-SJRTlsRrQ7DYBGGWwvbJhB6jGg/exec", "category": "Games" }
 ]
