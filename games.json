@@ -1,17 +1,37 @@
 [
   {
-    "title": "Snapchat",
-    "url": "https://www.snapchat.com",
-    "thumb": "https://www.logo.wine/a/logo/Snapchat/Snapchat-Ghost-Logo.wine.svg"
+    "title": "Instagram",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png",
+    "url": "https://www.instagram.com"
   },
   {
-    "title": "Steam",
-    "url": "https://store.steampowered.com",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg"
+    "title": "Snapchat",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Snapchat_logo.svg",
+    "url": "https://web.snapchat.com"
+  },
+  {
+    "title": "TikTok",
+    "thumb": "https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg",
+    "url": "https://urlebird.com"
+  },
+  {
+    "title": "Roblox (Cloud)",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg",
+    "url": "https://now.gg/apps/roblox-corporation/5349/roblox.html"
+  },
+  {
+    "title": "Steam Store",
+    "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Steam.png",
+    "url": "https://store.steampowered.com/search/"
   },
   {
     "title": "YoLearn Proxy",
-    "url": "https://yolearn.com",
-    "thumb": "https://yolearn.com/assets/images/logo.png"
+    "thumb": "https://tucdn.yolearn.org/favicon.ico",
+    "url": "https://tucdn.yolearn.org/"
+  },
+  {
+    "title": "Resource Doc",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/01/Google_Docs_logo_%282014-2020%29.svg",
+    "url": "https://docs.google.com/document/d/1J6hZXbQYOKtuaj-j-TP4O8vFMMtROCJJKu-JCRaeXtI/preview"
   }
 ]
