@@ -15,22 +15,21 @@ function renderCards(data) {
     if (!container) return;
     container.innerHTML = "";
     
-    // Define the order of sections
     const categories = ["Games", "Social Media", "Movies", "Proxies"];
 
     categories.forEach(cat => {
         const filtered = data.filter(item => item.category === cat);
         
         if (filtered.length > 0) {
-            // Create the Section Header (The "Fat Row" title)
-            const sectionHeader = document.createElement('h2');
-            sectionHeader.className = "category-title";
-            sectionHeader.textContent = cat;
-            container.appendChild(sectionHeader);
+            // 1. Create the Section Header
+            const header = document.createElement('h2');
+            header.className = "category-title";
+            header.textContent = cat;
+            container.appendChild(header);
 
-            // Create a wrapper for the icons so they stay grouped but "fat"
+            // 2. Create the "Fat" Wrapper
             const group = document.createElement('div');
-            group.className = "category-group";
+            group.className = "category-group"; // This is the 'Fat Row'
 
             filtered.forEach(item => {
                 const card = document.createElement('div');
@@ -38,7 +37,7 @@ function renderCards(data) {
                 
                 const iconHtml = (item.thumb && item.thumb.startsWith('http')) 
                     ? `<img src="${item.thumb}" onerror="this.src='https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Steam.png'">` 
-                    : `<div style="font-size: 50px; padding: 15px;">🎮</div>`;
+                    : `<div style="font-size: 40px; padding: 10px;">🎮</div>`;
 
                 card.innerHTML = `
                     <div class="icon-box">${iconHtml}</div>
@@ -54,20 +53,12 @@ function renderCards(data) {
     });
 }
 
-// Clock Logic
-function updateClock() {
+// Clock & Panic Button
+setInterval(() => {
     const clock = document.getElementById('clock');
-    if (clock) {
-        const now = new Date();
-        clock.textContent = now.getHours().toString().padStart(2, '0') + ":" + 
-                           now.getMinutes().toString().padStart(2, '0') + ":" + 
-                           now.getSeconds().toString().padStart(2, '0');
-    }
-}
-setInterval(updateClock, 1000);
-updateClock();
+    if (clock) clock.textContent = new Date().toLocaleTimeString('en-GB');
+}, 1000);
 
-// Panic Button
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') window.location.href = 'https://canvas.instructure.com/login/canvas';
 });
