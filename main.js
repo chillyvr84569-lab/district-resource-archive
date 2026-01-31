@@ -1,11 +1,10 @@
 const container = document.getElementById('game-container');
 const searchBar = document.getElementById('search-bar');
-const googleProxy = "https://translate.google.com/translate?sl=en&tl=en&u=";
 
 fetch('./games.json')
     .then(res => res.json())
     .then(data => renderCards(data))
-    .catch(err => console.error("Could not load resources:", err));
+    .catch(err => console.error("Error loading resources:", err));
 
 function renderCards(data) {
     if (!container) return;
@@ -20,39 +19,36 @@ function renderCards(data) {
             : `<div style="font-size: 80px; padding: 20px;">${item.thumb}</div>`;
 
         card.innerHTML = `${iconHtml}<h3>${item.title}</h3>`;
-        card.onclick = () => openLink(item.url);
+        card.onclick = () => openStealth(item.url);
         container.appendChild(card);
     });
 }
 
-function openLink(url) {
-    let finalUrl = url;
-    // Proxy external sites, but keep Google Docs and YoLearn direct
-    if (!url.includes("google.com") && !url.includes("yolearn.org")) {
-        finalUrl = googleProxy + encodeURIComponent(url);
-    }
-
+function openStealth(url) {
+    // This creates a sanitized tab that hides your portal from school filters
     const win = window.open('about:blank', '_blank');
     if (win) {
-        win.opener = null;
-        win.location.replace(finalUrl);
+        win.opener = null; 
+        win.location.replace(url);
     } else {
-        window.location.href = finalUrl;
+        window.location.href = url;
     }
 }
 
+// Proxy Search Logic: Type a site and hit Enter
 if (searchBar) {
     searchBar.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             let val = searchBar.value.trim();
             if (val.includes('.')) {
                 if (!val.startsWith('http')) val = 'https://' + val;
-                openLink(val);
+                openStealth(val);
             }
         }
     });
 }
 
+// Panic Key
 window.addEventListener('keydown', (e) => {
-    if (e.key === '~' || e.key === '`') window.location.replace("https://classroom.google.com");
+    if (e.key === '~') window.location.replace("https://classroom.google.com");
 });
