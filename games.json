@@ -40,14 +40,14 @@
     "url": "https://www.crazygames.com"
   },
   {
-    "title": "GoWish",
-    "thumb": "https://gowish.com/favicon.ico",
-    "url": "https://gowish.com"
-  },
-  {
     "title": "Twitch TV",
     "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Twitch_Glitch_Logo_Purple.svg",
     "url": "https://www.twitch.tv"
+  },
+  {
+    "title": "Google Macro",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_Apps_Script.svg",
+    "url": "https://script.google.com/macros/s/AKfycbzAaAh5pgA7JxSsHGAx4EsaSqKRf3z1nXWd0YK-OAR-SJRTlsRrQ7DYBGGWwvbJhB6jGg/exec"
   },
   {
     "title": "Resource Doc",
