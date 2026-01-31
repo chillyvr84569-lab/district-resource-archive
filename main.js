@@ -1,63 +1,68 @@
-let allData = [];
-let currentCategory = 'Games';
+const container = document.getElementById('games-container');
+const searchInput = document.getElementById('searchInput');
 
-// 1. Fetch Data
+// 1. Fetch and Display Apps
 fetch('games.json')
     .then(res => res.json())
     .then(data => {
-        allData = data;
-        renderCards(allData);
-    });
+        renderCards(data);
+        
+        // Unified Search Logic
+        searchInput.addEventListener('input', () => {
+            const term = searchInput.value.toLowerCase();
+            const filtered = data.filter(item => 
+                item.title.toLowerCase().includes(term)
+            );
+            renderCards(filtered);
+        });
+    })
+    .catch(err => console.error("Error loading JSON:", err));
 
-// 2. Tab Switcher Function
-function filterTab(category) {
-    currentCategory = category;
-    
-    // Update active button styling
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.innerText.includes(category.split(' ')[0])) btn.classList.add('active');
-    });
-
-    renderCards(allData);
-}
-
+// 2. The Grid Rendering Function
 function renderCards(data) {
-    const container = document.getElementById('games-container');
     if (!container) return;
     container.innerHTML = "";
 
-    // Only show items matching the selected tab
-    const filtered = data.filter(item => item.category === currentCategory);
-
-    filtered.forEach(item => {
+    data.forEach(item => {
         const card = document.createElement('div');
         card.className = 'game-card';
-        card.innerHTML = `
-            ${item.thumb.startsWith('http') ? `<img src="${item.thumb}">` : `<div style="font-size:80px;padding:20px;">🎮</div>`}
-            <h3 class="card-title">${item.title}</h3>`;
         
-        card.onclick = () => window.open(item.url, '_blank');
+        // Handle Icons: Use thumb URL if it exists, otherwise use a generic emoji
+        const iconHtml = (item.thumb && item.thumb.startsWith('http')) 
+            ? `<img src="${item.thumb}" onerror="this.src='https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Steam.png'">` 
+            : `<div style="font-size: 50px; padding: 15px;">🎮</div>`;
+
+        card.innerHTML = `
+            <div class="icon-box">${iconHtml}</div>
+            <h3 class="card-title">${item.title}</h3>
+        `;
+        
+        // Direct Open to avoid X-Frame-Options blocking (Snapchat/Instagram)
+        card.onclick = () => {
+            window.open(item.url, '_blank');
+        };
+        
         container.appendChild(card);
     });
 }
 
-// 3. Search logic (Updated to work with tabs)
-document.getElementById('searchInput').addEventListener('input', (e) => {
-    const term = e.target.value.toLowerCase();
-    const searched = allData.filter(item => 
-        item.category === currentCategory && 
-        item.title.toLowerCase().includes(term)
-    );
-    renderCards(searched);
-});
+// 3. Huge LED Clock Logic (24-hour style to match screenshot)
+function updateClock() {
+    const clockElement = document.getElementById('clock');
+    if (clockElement) {
+        const now = new Date();
+        const h = String(now.getHours()).padStart(2, '0');
+        const m = String(now.getMinutes()).padStart(2, '0');
+        const s = String(now.getSeconds()).padStart(2, '0');
+        clockElement.textContent = `${h}:${m}:${s}`;
+    }
+}
+setInterval(updateClock, 1000);
+updateClock();
 
-// 4. Clock & Panic remain same
-setInterval(() => {
-    const clock = document.getElementById('clock');
-    if (clock) clock.textContent = new Date().toLocaleTimeString();
-}, 1000);
-
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') window.location.href = 'https://canvas.instructure.com/login/canvas';
+// 4. Panic Button (Canvas Redirect)
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        window.location.href = 'https://canvas.instructure.com/login/canvas';
+    }
 });
