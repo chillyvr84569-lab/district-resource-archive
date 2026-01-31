@@ -21,23 +21,22 @@ function renderCards(data) {
         const filtered = data.filter(item => item.category === cat);
         
         if (filtered.length > 0) {
-            // Category Label
+            // Add the category name as a section header
             const header = document.createElement('h2');
             header.className = "category-title";
             header.textContent = cat;
             container.appendChild(header);
 
-            // Grid wrapper for this category
+            // Create a wrapper that allows icons to fill multiple rows
             const group = document.createElement('div');
-            group.className = "category-group";
+            group.className = "fat-row-grid";
 
             filtered.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'game-card';
                 
-                // We add 'class="card-icon"' to keep them from exploding
                 const iconHtml = (item.thumb && item.thumb.startsWith('http')) 
-                    ? `<img src="${item.thumb}" class="card-icon" onerror="this.src='https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Steam.png'">` 
+                    ? `<img src="${item.thumb}" class="card-img" onerror="this.src='https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Steam.png'">` 
                     : `<div class="card-emoji">🎮</div>`;
 
                 card.innerHTML = `
@@ -54,7 +53,7 @@ function renderCards(data) {
     });
 }
 
-// 24-hour Clock
+// 24hr Clock Logic
 setInterval(() => {
     const clock = document.getElementById('clock');
     if (clock) {
