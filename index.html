@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>District Resource Archive</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <div class="header">
-        <div id="clock">00:00:00</div>
-        <h1>District Resource Archive</h1>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search resources...">
-        </div>
+<div class="header">
+    <div id="clock">00:00:00</div>
+    <h1>District Resource Archive</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search resources...">
     </div>
+    <div class="tab-container">
+        <button class="tab-btn active" onclick="filterTab('Games')">Games</button>
+        <button class="tab-btn" onclick="filterTab('Social Media')">Social</button>
+        <button class="tab-btn" onclick="filterTab('Movies')">Movies</button>
+        <button class="tab-btn" onclick="filterTab('Proxies')">Proxies</button>
+    </div>
+</div>
 
-    <div id="games-container" class="container">
-        </div>
+<div id="games-container" class="container"></div>
 
-    <script src="main.js?v=10"></script>
-</body>
-</html>
+<script src="main.js?v=15"></script>
