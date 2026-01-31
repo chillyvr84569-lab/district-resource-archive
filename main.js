@@ -1,7 +1,7 @@
 const container = document.getElementById('game-container');
 const searchBar = document.getElementById('search-bar');
 
-fetch('./games.json')
+fetch('/district-resource-archive/games.json')
     .then(res => res.json())
     .then(data => renderCards(data))
     .catch(err => console.error("Error:", err));
