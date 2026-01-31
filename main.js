@@ -9,21 +9,33 @@ fetch('/district-resource-archive/games.json')
 function renderCards(data) {
     if (!container) return;
     container.innerHTML = "";
-    data.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'game-card';
-        const isUrl = item.thumb.startsWith('http');
-        const iconHtml = isUrl 
-            ? `<img src="${item.thumb}" onerror="this.src='https://via.placeholder.com/150'">` 
-            : `<div style="font-size: 80px; padding: 20px;">${item.thumb}</div>`;
 
-        card.innerHTML = `${iconHtml}<h3>${item.title}</h3>`;
-        // DIRECT OPEN: This fixes the "Refused to Connect" error
-        card.onclick = () => window.open(item.url, '_blank');
-        container.appendChild(card);
+    const categories = ["Games", "Social Media", "Movies", "Proxies"];
+
+    categories.forEach(cat => {
+        // Create a heading for each category
+        const section = document.createElement('div');
+        section.style.width = "100%";
+        section.innerHTML = `<h2 style="color: #bc13fe; text-shadow: 0 0 10px #bc13fe; margin-top: 30px;">${cat}</h2>`;
+        container.appendChild(section);
+
+        // Filter data for this category
+        const filtered = data.filter(item => item.category === cat);
+
+        filtered.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'game-card';
+            const isUrl = item.thumb.startsWith('http');
+            const iconHtml = isUrl 
+                ? `<img src="${item.thumb}" onerror="this.src='https://via.placeholder.com/150'">`
+                : `<div style="font-size: 80px; padding: 20px;">${item.thumb}</div>`;
+
+            card.innerHTML = `${iconHtml}<h3 class="card-title">${item.title}</h3>`;
+            card.onclick = () => window.open(item.url, '_blank');
+            container.appendChild(card);
+        });
     });
 }
-
 // Search Logic
 if (searchBar) {
     searchBar.addEventListener('keypress', (e) => {
