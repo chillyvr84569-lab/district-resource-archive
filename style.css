@@ -68,3 +68,13 @@ body {
     border-radius: 10px;
     margin-bottom: 10px;
 }
+/* Hide titles by default */
+.card-title {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show titles when you hover the card */
+.game-card:hover .card-title {
+    opacity: 1;
+}
