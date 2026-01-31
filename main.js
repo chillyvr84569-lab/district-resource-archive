@@ -13,6 +13,7 @@ function renderCards(data) {
         const card = document.createElement('div');
         card.className = 'game-card';
         
+        // Handles URL images or the Camera Emoji
         const isUrl = item.thumb.startsWith('http');
         const iconHtml = isUrl 
             ? `<img src="${item.thumb}" onerror="this.src='https://via.placeholder.com/150'">` 
@@ -25,7 +26,7 @@ function renderCards(data) {
 }
 
 function openStealth(url) {
-    // This creates a sanitized tab that hides your portal from school filters
+    // This creates a "sanitized" tab that hides the portal from GoGuardian
     const win = window.open('about:blank', '_blank');
     if (win) {
         win.opener = null; 
@@ -35,7 +36,7 @@ function openStealth(url) {
     }
 }
 
-// Proxy Search Logic: Type a site and hit Enter
+// Proxy Search Logic: Type a site (e.g., 'discord.com') and hit Enter
 if (searchBar) {
     searchBar.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
@@ -48,7 +49,7 @@ if (searchBar) {
     });
 }
 
-// Panic Key
+// Panic Key: Press '~' to go to Google Classroom
 window.addEventListener('keydown', (e) => {
     if (e.key === '~') window.location.replace("https://classroom.google.com");
 });
