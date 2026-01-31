@@ -30,6 +30,26 @@
     "url": "https://tucdn.yolearn.org/"
   },
   {
+    "title": "Poki Games",
+    "thumb": "https://img.utdstc.com/icon/884/222/8842220409945037d6e499d141684c3793740203f1947b7440898517228a07c4:200",
+    "url": "https://poki.com"
+  },
+  {
+    "title": "Crazy Games",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/0e/CrazyGames_logo.png",
+    "url": "https://www.crazygames.com"
+  },
+  {
+    "title": "GoWish",
+    "thumb": "https://gowish.com/favicon.ico",
+    "url": "https://gowish.com"
+  },
+  {
+    "title": "Twitch TV",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Twitch_Glitch_Logo_Purple.svg",
+    "url": "https://www.twitch.tv"
+  },
+  {
     "title": "Resource Doc",
     "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/01/Google_Docs_logo_%282014-2020%29.svg",
     "url": "https://docs.google.com/document/d/1J6hZXbQYOKtuaj-j-TP4O8vFMMtROCJJKu-JCRaeXtI/preview"
