@@ -36,3 +36,24 @@ if (searchBar) {
         }
     });
 }
+// This function calculates the time and updates the screen
+function startClock() {
+    const clockElement = document.getElementById('digital-clock');
+    
+    // Check if the clock exists on the page
+    if (clockElement) {
+        setInterval(() => {
+            const now = new Date();
+            
+            // Format time as HH:MM:SS
+            let hours = String(now.getHours()).padStart(2, '0');
+            let minutes = String(now.getMinutes()).padStart(2, '0');
+            let seconds = String(now.getSeconds()).padStart(2, '0');
+            
+            clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }, 1000); // This makes it update every 1 second
+    }
+}
+
+// Kick off the clock
+startClock();
