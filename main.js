@@ -4,7 +4,7 @@ const searchBar = document.getElementById('search-bar');
 fetch('./games.json')
     .then(res => res.json())
     .then(data => renderCards(data))
-    .catch(err => console.error("Error loading resources:", err));
+    .catch(err => console.error("Data Load Error:", err));
 
 function renderCards(data) {
     if (!container) return;
@@ -25,19 +25,26 @@ function renderCards(data) {
 }
 
 function openStealth(url) {
-    // This creates a "cloaked" tab. 
-    // It stops the "Refused to Connect" error and hides the site from GoGuardian.
+    // This fixes the Screenshot 214905 error by opening a new cloaked tab
     const win = window.open('about:blank', '_blank');
     if (win) {
-        win.opener = null; 
-        win.location.replace(url);
+        win.opener = null;
+        win.document.write(`
+            <html>
+                <head>
+                    <title>My Drive - Google Drive</title>
+                    <link rel="icon" href="https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png">
+                    <style>body,html{margin:0;padding:0;height:100vh;overflow:hidden}iframe{width:100%;height:100%;border:none}</style>
+                </head>
+                <body><iframe src="${url}"></iframe></body>
+            </html>
+        `);
     } else {
-        // Fallback if the browser blocks the popup
         window.location.href = url;
     }
 }
 
-// Search: Type a site and hit Enter
+// Proxy Search Logic
 if (searchBar) {
     searchBar.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
@@ -50,7 +57,7 @@ if (searchBar) {
     });
 }
 
-// Panic Key: Press '~' to go to Classroom instantly
+// Panic Key
 window.addEventListener('keydown', (e) => {
-    if (e.key === '~' || e.key === '`') window.location.replace("https://classroom.google.com");
+    if (e.key === '~') window.location.replace("https://classroom.google.com");
 });
