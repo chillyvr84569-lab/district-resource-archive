@@ -1,6 +1,7 @@
 const container = document.getElementById('games-container');
 const searchInput = document.getElementById('searchInput');
 
+// 1. Load Data
 fetch('games.json')
     .then(res => res.json())
     .then(data => {
@@ -11,6 +12,30 @@ fetch('games.json')
         });
     });
 
+// 2. The About:Blank Cloaker Logic
+function openInCloakedTab(url, title) {
+    const win = window.open('about:blank', '_blank');
+    if (!win) {
+        // Fallback if popups are blocked
+        window.open(url, '_blank');
+        return;
+    }
+
+    win.document.title = title || "Google Docs";
+    const body = win.document.body;
+    body.style.margin = '0';
+    body.style.height = '100vh';
+
+    const iframe = win.document.createElement('iframe');
+    iframe.style.border = 'none';
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.src = url;
+
+    body.appendChild(iframe);
+}
+
+// 3. Render Grid
 function renderCards(data) {
     if (!container) return;
     container.innerHTML = "";
@@ -21,13 +46,11 @@ function renderCards(data) {
         const filtered = data.filter(item => item.category === cat);
         
         if (filtered.length > 0) {
-            // Add the category name as a section header
             const header = document.createElement('h2');
             header.className = "category-title";
             header.textContent = cat;
             container.appendChild(header);
 
-            // Create a wrapper that allows icons to fill multiple rows
             const group = document.createElement('div');
             group.className = "fat-row-grid";
 
@@ -36,15 +59,16 @@ function renderCards(data) {
                 card.className = 'game-card';
                 
                 const iconHtml = (item.thumb && item.thumb.startsWith('http')) 
-                    ? `<img src="${item.thumb}" class="card-img" onerror="this.src='https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Steam.png'">` 
-                    : `<div class="card-emoji">🎮</div>`;
+                    ? `<img src="${item.thumb}" class="card-img" onerror="this.style.display='none'">` 
+                    : `<div style="font-size: 20px;">📄</div>`;
 
                 card.innerHTML = `
                     <div class="icon-box">${iconHtml}</div>
-                    <h3 class="card-title">${item.title}</h3>
+                    <div class="card-title">${item.title}</div>
                 `;
                 
-                card.onclick = () => window.open(item.url, '_blank');
+                // Use the Cloaker on click
+                card.onclick = () => openInCloakedTab(item.url, item.title);
                 group.appendChild(card);
             });
             
@@ -53,18 +77,13 @@ function renderCards(data) {
     });
 }
 
-// 24hr Clock Logic
+// 4. Boring Clock
 setInterval(() => {
     const clock = document.getElementById('clock');
-    if (clock) {
-        const now = new Date();
-        clock.textContent = now.getHours().toString().padStart(2, '0') + ":" + 
-                           now.getMinutes().toString().padStart(2, '0') + ":" + 
-                           now.getSeconds().toString().padStart(2, '0');
-    }
+    if (clock) clock.textContent = new Date().toLocaleTimeString();
 }, 1000);
 
-// Panic Button
+// 5. Panic Button (Canvas)
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') window.location.href = 'https://canvas.instructure.com/login/canvas';
 });
