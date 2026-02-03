@@ -3,27 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resource Library</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <title>Academic Resource Archive - Stillwell</title>
+    <style>
+        /* Stealth CSS: Makes the portal look like a boring school document */
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: "Times New Roman", Times, serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        .header { border-bottom: 1px solid #ccc; margin-bottom: 20px; }
+        h1 { font-size: 24px; margin-bottom: 5px; }
+        .large-clock { font-family: monospace; color: #666; font-size: 14px; }
+        
+        .search-container input {
+            width: 100%;
+            padding: 8px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+        }
+
+        .category-title {
+            font-size: 18px;
+            border-bottom: 2px solid #333;
+            margin-top: 30px;
+            text-transform: uppercase;
+        }
+
+        .fat-row-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .game-card {
+            width: 130px;
+            padding: 10px;
+            border: 1px solid #eee;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .game-card:hover { background: #f9f9f9; border-color: #ccc; }
+
+        /* Hides icons slightly so they don't pop out to teachers */
+        .card-img {
+            max-width: 50px;
+            max-height: 50px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+        }
+        .game-card:hover .card-img { filter: none; opacity: 1; }
+        
+        .card-title { font-size: 13px; margin-top: 5px; font-weight: normal; }
+    </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>Resource Library</h1>
-        <p class="subtitle">Stillwell Middle School - Supplemental Materials Database</p>
+        <h1>Academic Resource Archive</h1>
+        <p>Reference Material Database for District Students</p>
         <div id="clock" class="large-clock">00:00:00</div>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search database or enter URL...">
-        </div>
     </div>
 
-    <div id="games-container" class="container"></div>
-
-    <div class="footer">
-        <p>© 2026 District Educational Board. All rights reserved.</p>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Enter Reference ID or Search Database...">
     </div>
 
-    <script src="main.js?v=25"></script>
+    <div id="games-container"></div>
+
+    <script src="main.js?v=30"></script>
 </body>
 </html>
