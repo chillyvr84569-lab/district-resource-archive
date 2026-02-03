@@ -1,7 +1,7 @@
 const container = document.getElementById('games-container');
 const searchInput = document.getElementById('searchInput');
 
-// 1. Load Data from your JSON
+// 1. Load Data
 fetch('games.json')
     .then(res => res.json())
     .then(data => {
@@ -34,7 +34,7 @@ function openInCloakedTab(url, title) {
     body.appendChild(iframe);
 }
 
-// 3. Render the Boring Grid
+// 3. Render Grid
 function renderCards(data) {
     if (!container) return;
     container.innerHTML = "";
@@ -66,16 +66,23 @@ function renderCards(data) {
                     <div class="card-title">${item.title}</div>
                 `;
                 
-                // HYBRID LOGIC: Fixes the "Refused to Connect" error
+                // FIXED HYBRID LOGIC: Adds Instagram and Snapchat to the bypass list
                 card.onclick = () => {
-                    const sensitiveSites = ['script.google.com', 'now.gg', 'google.com', 'translate.google.com'];
+                    const sensitiveSites = [
+                        'script.google.com', 
+                        'now.gg', 
+                        'google.com', 
+                        'translate.google.com',
+                        'instagram.com',
+                        'snapchat.com'
+                    ];
                     const isSensitive = sensitiveSites.some(site => item.url.includes(site));
 
                     if (isSensitive) {
-                        // Open normally if the site blocks iframes
+                        // Open in a new tab to avoid "Refused to Connect"
                         window.open(item.url, '_blank');
                     } else {
-                        // Use the cloaker for standard games/sites
+                        // Use the about:blank cloaker for everything else
                         openInCloakedTab(item.url, item.title);
                     }
                 };
@@ -87,13 +94,13 @@ function renderCards(data) {
     });
 }
 
-// 4. Boring Clock for "Study" appearance
+// 4. Boring Clock
 setInterval(() => {
     const clock = document.getElementById('clock');
     if (clock) clock.textContent = new Date().toLocaleTimeString();
 }, 1000);
 
-// 5. Panic Button (Escape key flips to Canvas)
+// 5. Panic Button
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') window.location.href = 'https://canvas.instructure.com/login/canvas';
 });
