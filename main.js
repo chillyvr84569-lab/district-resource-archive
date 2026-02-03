@@ -1,7 +1,7 @@
 const container = document.getElementById('games-container');
 const searchInput = document.getElementById('searchInput');
 
-// 1. Load Data
+// 1. Load Data from your JSON
 fetch('games.json')
     .then(res => res.json())
     .then(data => {
@@ -12,11 +12,10 @@ fetch('games.json')
         });
     });
 
-// 2. The About:Blank Cloaker Logic
+// 2. The Stealth Cloaker Function
 function openInCloakedTab(url, title) {
     const win = window.open('about:blank', '_blank');
     if (!win) {
-        // Fallback if popups are blocked
         window.open(url, '_blank');
         return;
     }
@@ -35,7 +34,7 @@ function openInCloakedTab(url, title) {
     body.appendChild(iframe);
 }
 
-// 3. Render Grid
+// 3. Render the Boring Grid
 function renderCards(data) {
     if (!container) return;
     container.innerHTML = "";
@@ -67,8 +66,19 @@ function renderCards(data) {
                     <div class="card-title">${item.title}</div>
                 `;
                 
-                // Use the Cloaker on click
-                card.onclick = () => openInCloakedTab(item.url, item.title);
+                // HYBRID LOGIC: Fixes the "Refused to Connect" error
+                card.onclick = () => {
+                    const sensitiveSites = ['script.google.com', 'now.gg', 'google.com', 'translate.google.com'];
+                    const isSensitive = sensitiveSites.some(site => item.url.includes(site));
+
+                    if (isSensitive) {
+                        // Open normally if the site blocks iframes
+                        window.open(item.url, '_blank');
+                    } else {
+                        // Use the cloaker for standard games/sites
+                        openInCloakedTab(item.url, item.title);
+                    }
+                };
                 group.appendChild(card);
             });
             
@@ -77,13 +87,13 @@ function renderCards(data) {
     });
 }
 
-// 4. Boring Clock
+// 4. Boring Clock for "Study" appearance
 setInterval(() => {
     const clock = document.getElementById('clock');
     if (clock) clock.textContent = new Date().toLocaleTimeString();
 }, 1000);
 
-// 5. Panic Button (Canvas)
+// 5. Panic Button (Escape key flips to Canvas)
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') window.location.href = 'https://canvas.instructure.com/login/canvas';
 });
