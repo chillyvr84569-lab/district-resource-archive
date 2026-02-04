@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Resource Archive</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css"> <style>
+        body { background: #0f0f0f; color: #eee; font-family: sans-serif; margin: 0; text-align: center; }
+        header { padding: 40px 20px; border-bottom: 1px solid #333; }
+        input { padding: 12px; width: 80%; max-width: 500px; border-radius: 8px; border: 1px solid #444; background: #222; color: #fff; margin-top: 15px; }
+        #game-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding: 30px; }
+        .game-card { background: #1a1a1a; padding: 15px; border-radius: 10px; cursor: pointer; border: 1px solid #333; }
+        .game-card img { width: 100%; border-radius: 5px; height: 120px; object-fit: cover; }
+    </style>
 </head>
 <body>
-
     <header>
         <h1>Academic Resource Archive</h1>
         <p>Reference Material Database for District Students</p>
-        
-        <div class="search-box">
-            <input type="text" id="game-search" placeholder="Enter Reference ID or Search Database...">
-        </div>
+        <input type="text" id="game-search" placeholder="Search Database...">
     </header>
-
-    <main>
-        <div id="game-container" class="game-grid"></div>
-    </main>
-
-    <script src="js/main.js"></script>
-</body>
+    <main><div id="game-container"></div></main>
+    <script src="main.js"></script> </body>
 </html>
