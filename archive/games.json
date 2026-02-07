@@ -7,87 +7,397 @@
     "cloak": true
   },
   {
-    "title": "Interstellar",
-    "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Interstellar.png",
-    "url": "https://gointerstellar.app",
+    "title": "Rammerhead",
+    "thumb": "https://avatars.githubusercontent.com/u/86362337?s=200&v=4",
+    "url": "https://demo.rammerhead.org/",
     "category": "Proxies",
     "cloak": true
   },
   {
-    "title": "Discord",
+    "title": "CroxyProxy",
+    "thumb": "https://www.croxyproxy.com/favicon.ico",
+    "url": "https://www.croxyproxy.com/",
+    "category": "Proxies",
+    "cloak": false
+  },
+  {
+    "title": "Discord (Direct)",
     "thumb": "https://assets-global.website-files.com/6257adef93867e56f84d3092/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png",
     "url": "https://discord.com/app",
     "category": "Social",
     "cloak": false
   },
   {
-    "title": "Instagram",
+    "title": "Instagram (Direct)",
     "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png",
     "url": "https://www.instagram.com",
     "category": "Social",
     "cloak": false
   },
   {
-    "title": "1v1.LOL (V6 Mirror)",
+    "title": "TikTok (Mirror)",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg",
+    "url": "https://urlebird.com/",
+    "category": "Social",
+    "cloak": false
+  },
+  {
+    "title": "Snapchat",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Snapchat_logo.svg",
+    "url": "https://web.snapchat.com",
+    "category": "Social",
+    "cloak": false
+  },
+  {
+    "title": "1v1.LOL (Google Mirror)",
     "thumb": "https://play-lh.googleusercontent.com/669n1T4M",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/1v1/1v1.xml",
-    "category": "Games",
+    "category": "Shooters",
     "cloak": true
   },
   {
     "title": "Retro Bowl",
     "thumb": "https://play-lh.googleusercontent.com/TM_f_vS38392S28LpXh7Py6H8H8",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/retro-bowl/retro-bowl.xml",
-    "category": "Games",
+    "category": "Sports",
     "cloak": true
   },
   {
     "title": "Slope",
     "thumb": "https://raw.githubusercontent.com/tuhidul/Slope-Game/master/slope.png",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/slope/slope.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "BitLife",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/bitlife.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/bitlife/bitlife.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "FNAF 1",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf/fnaf1.xml",
-    "category": "Games",
+    "category": "Arcade",
     "cloak": true
   },
   {
     "title": "Subway Surfers",
     "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/subway-surfers.png",
     "url": "https://subway-surfers.github.io/",
-    "category": "Games",
+    "category": "Arcade",
     "cloak": true
   },
   {
-    "title": "Cookie Clicker (Mirror)",
+    "title": "BitLife",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/bitlife.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/bitlife/bitlife.xml",
+    "category": "Simulation",
+    "cloak": true
+  },
+  {
+    "title": "FNAF 1",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf/fnaf1.xml",
+    "category": "Horror",
+    "cloak": true
+  },
+  {
+    "title": "Cookie Clicker",
     "thumb": "https://orteil.dashnet.org/cookieclicker/img/perfectCookie.png",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/cookie-clicker/cookie-clicker.xml",
-    "category": "Games",
+    "category": "Clicker",
     "cloak": true
+  },
+  {
+    "title": "Eaglercraft (Minecraft)",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/minecraft.png",
+    "url": "https://eaglercraft.com/mc/1.8.8/",
+    "category": "Classic",
+    "cloak": true
+  },
+  {
+    "title": "Tetris",
+    "thumb": "https://tetris.com/favicon.ico",
+    "url": "https://tetris.com/play-tetris",
+    "category": "Classic",
+    "cloak": true
+  },
+  {
+    "title": "Pac-Man",
+    "thumb": "https://www.google.com/logos/2010/pacman10-hp.png",
+    "url": "https://www.google.com/logos/2010/pacman10-i.html",
+    "category": "Classic",
+    "cloak": true
+  },
+  {
+    "title": "Shell Shockers",
+    "thumb": "https://shellshock.io/favicon.ico",
+    "url": "https://shellshock.io/",
+    "category": "Shooters",
+    "cloak": false
+  },
+  {
+    "title": "Krunker.io",
+    "thumb": "https://krunker.io/img/logo_3.png",
+    "url": "https://krunker.io/",
+    "category": "Shooters",
+    "cloak": false
   },
   {
     "title": "Paper.io 2",
     "thumb": "https://paper-io.com/favicon.ico",
     "url": "https://paper-io.com/",
-    "category": "Games",
+    "category": "IO Games",
     "cloak": false
   },
   {
-    "title": "Eaglercraft 1.8.8",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/minecraft.png",
-    "url": "https://eaglercraft.com/mc/1.8.8/",
-    "category": "Games",
+    "title": "Agar.io",
+    "thumb": "https://agar.io/img/favicon.ico",
+    "url": "https://agar.io/",
+    "category": "IO Games",
+    "cloak": false
+  },
+  {
+    "title": "Slither.io",
+    "thumb": "https://slither.io/s/favicon.png",
+    "url": "http://slither.io/",
+    "category": "IO Games",
+    "cloak": false
+  },
+  {
+    "title": "Hole.io",
+    "thumb": "https://hole-io.com/favicon.ico",
+    "url": "https://hole-io.com/",
+    "category": "IO Games",
+    "cloak": false
+  },
+  {
+    "title": "Basketball Stars",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/8c067831d16140641151610410609714.png",
+    "url": "https://basketball-stars.github.io/",
+    "category": "Sports",
+    "cloak": true
+  },
+  {
+    "title": "Moto X3M",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/b91754093c8d451197771747806144e3.png",
+    "url": "https://moto-x3m.github.io/",
+    "category": "Racing",
+    "cloak": true
+  },
+  {
+    "title": "Tunnel Rush",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/tunnel-rush.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/tunnel-rush/tunnel-rush.xml",
+    "category": "Arcade",
+    "cloak": true
+  },
+  {
+    "title": "Temple Run 2",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/96602e1b124151778970877983636f71.png",
+    "url": "https://temple-run.github.io/",
+    "category": "Arcade",
+    "cloak": true
+  },
+  {
+    "title": "Crossy Road",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/6e355d9573887c223d6a2e47e179d722.png",
+    "url": "https://crossy-road.github.io/",
+    "category": "Arcade",
+    "cloak": true
+  },
+  {
+    "title": "Geometry Dash",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/geometry-dash.png",
+    "url": "https://geometry-dash.github.io/",
+    "category": "Arcade",
+    "cloak": true
+  },
+  {
+    "title": "Stack",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/510614b2d1316531398c2534f3780365.png",
+    "url": "https://stack.github.io/",
+    "category": "Arcade",
+    "cloak": true
+  },
+  {
+    "title": "2048",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2048_logo.svg/1200px-2048_logo.svg.png",
+    "url": "https://play2048.co/",
+    "category": "Puzzle",
+    "cloak": true
+  },
+  {
+    "title": "Wordle",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Wordle_196_example.svg",
+    "url": "https://www.nytimes.com/games/wordle/index.html",
+    "category": "Puzzle",
+    "cloak": false
+  },
+  {
+    "title": "Chess.com",
+    "thumb": "https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/SamCopeland/phpmeXx6V.png",
+    "url": "https://www.chess.com/play/online",
+    "category": "Strategy",
+    "cloak": false
+  },
+  {
+    "title": "Happy Wheels",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/a622543e02046849887754d9c7929424.png",
+    "url": "https://happy-wheels.github.io/",
+    "category": "Arcade",
+    "cloak": true
+  },
+  {
+    "title": "Rooftop Snipers",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/1f3c3d55197828067406606346284643.png",
+    "url": "https://rooftop-snipers.github.io/",
+    "category": "Shooters",
+    "cloak": true
+  },
+  {
+    "title": "Getaway Shootout",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/2a361596482367448885c3453396825c.png",
+    "url": "https://getaway-shootout.github.io/",
+    "category": "Shooters",
     "cloak": true
   }
 ]
+/* --- NEW SHOOTERS & FPS --- */
+  {
+    "title": "Pixel Warfare",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/b8976695779075723385732159846067.png",
+    "url": "https://pixel-warfare.github.io/",
+    "category": "Shooter",
+    "cloak": true
+  },
+  {
+    "title": "Venge.io",
+    "thumb": "https://venge.io/favicon.ico",
+    "url": "https://venge.io/",
+    "category": "Shooter",
+    "cloak": false
+  },
+  {
+    "title": "Bullet Force",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/c2054238719213190875931034442657.png",
+    "url": "https://bullet-force.github.io/",
+    "category": "Shooter",
+    "cloak": true
+  },
+  {
+    "title": "Time Shooter 2",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/54a17926715875239965251412030114.png",
+    "url": "https://time-shooter-2.github.io/",
+    "category": "Shooter",
+    "cloak": true
+  },
+
+  /* --- RACING & CARS --- */
+  {
+    "title": "Drift Hunters",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/drift-hunters.png",
+    "url": "https://drift-hunters.github.io/",
+    "category": "Racing",
+    "cloak": true
+  },
+  {
+    "title": "Madalin Stunt Cars 2",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/madalin-stunt-cars-2.png",
+    "url": "https://madalin-stunt-cars-2.github.io/",
+    "category": "Racing",
+    "cloak": true
+  },
+  {
+    "title": "Drive Mad",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/510614b2d1316531398c2534f3780365.png",
+    "url": "https://drive-mad.github.io/",
+    "category": "Racing",
+    "cloak": true
+  },
+  {
+    "title": "Eggy Car",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/eggy-car.png",
+    "url": "https://eggy-car.github.io/",
+    "category": "Racing",
+    "cloak": true
+  },
+
+  /* --- RETRO & EMULATORS --- */
+  {
+    "title": "Super Mario 64",
+    "thumb": "https://upload.wikimedia.org/wikipedia/en/6/6a/Super_Mario_64_box_cover.jpg",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/super-mario-64/super-mario-64.xml",
+    "category": "Retro",
+    "cloak": true
+  },
+  {
+    "title": "Pokemon Emerald",
+    "thumb": "https://upload.wikimedia.org/wikipedia/en/5/58/Pokemon_Emerald_Box_Art.jpg",
+    "url": "https://static.arcadespot.com/retro/gba/pokemon-emerald-version/",
+    "category": "Retro",
+    "cloak": false
+  },
+  {
+    "title": "Sonic the Hedgehog",
+    "thumb": "https://upload.wikimedia.org/wikipedia/en/b/ba/Sonic_the_Hedgehog_1_Genesis_box_art.jpg",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/sonic/sonic.xml",
+    "category": "Retro",
+    "cloak": true
+  },
+  {
+    "title": "Doom (1993)",
+    "thumb": "https://upload.wikimedia.org/wikipedia/en/5/57/Doom_cover_art.jpg",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/doom/doom.xml",
+    "category": "Retro",
+    "cloak": true
+  },
+
+  /* --- IO GAMES (Use Direct for Best Results) --- */
+  {
+    "title": "Diep.io",
+    "thumb": "https://diep.io/favicon.ico",
+    "url": "https://diep.io/",
+    "category": "IO Game",
+    "cloak": false
+  },
+  {
+    "title": "Zombs Royale",
+    "thumb": "https://zombsroyale.io/favicon.ico",
+    "url": "https://zombsroyale.io/",
+    "category": "IO Game",
+    "cloak": false
+  },
+  {
+    "title": "Mope.io",
+    "thumb": "https://mope.io/img/favicon.png",
+    "url": "https://mope.io/",
+    "category": "IO Game",
+    "cloak": false
+  },
+  {
+    "title": "Wings.io",
+    "thumb": "http://wings.io/favicon.ico",
+    "url": "http://wings.io/",
+    "category": "IO Game",
+    "cloak": false
+  },
+
+  /* --- CASUAL & IDLE --- */
+  {
+    "title": "Dino Game (Chrome)",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/dino.png",
+    "url": "https://chromedino.com/",
+    "category": "Casual",
+    "cloak": true
+  },
+  {
+    "title": "Tiny Fishing",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/4b3c9d74971032308678680746685117.png",
+    "url": "https://tiny-fishing.github.io/",
+    "category": "Casual",
+    "cloak": true
+  },
+  {
+    "title": "World's Hardest Game",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/worlds-hardest-game.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/worlds-hardest-game/worlds-hardest-game.xml",
+    "category": "Hard",
+    "cloak": true
+  },
+  {
+    "title": "Google Feud",
+    "thumb": "https://www.googlefeud.com/favicon.ico",
+    "url": "https://www.googlefeud.com/",
+    "category": "Casual",
+    "cloak": true
+  }
