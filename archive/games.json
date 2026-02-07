@@ -6,51 +6,48 @@
     "category": "Proxies"
   },
   {
-    "title": "Instagram (Mirror)",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png",
-    "url": "https://piks.eu.org/",
-    "category": "Social Media"
-  },
-  {
-    "title": "Snapchat (Mirror)",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Snapchat_logo.svg",
-    "url": "https://snap-proxy.github.io/",
-    "category": "Social Media"
-  },
-  {
-    "title": "TikTok",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg",
-    "url": "https://urlebird.com",
-    "category": "Social Media"
-  },
-  {
-    "title": "Roblox (now.gg Mirror)",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg",
-    "url": "https://educationblue.github.io/roblox/",
-    "category": "Games"
-  },
-  {
-    "title": "1v1.LOL (V6 Mirror)",
-    "thumb": "https://play-lh.googleusercontent.com/669n1T4M",
-    "url": "https://docs-google-com-0-opensocial-googleusercontent-com.metalfork.workers.dev/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@1908070d6a695e17300c6095982187f17666299b/1v1/1v1.xml",
-    "category": "Games"
-  },
-  {
-    "title": "Retro Bowl",
-    "thumb": "https://play-lh.googleusercontent.com/TM_f_vS38392S28LpXh7pY6H8H8",
-    "url": "https://game316.github.io/rb1/",
-    "category": "Games"
-  },
-  {
-    "title": "Interstellar",
-    "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Interstellar.png",
-    "url": "https://gointerstellar.app",
+    "title": "Obsidian (New Proxy)",
+    "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Safari.png",
+    "url": "https://cv-1.ynet.io/",
     "category": "Proxies"
   },
   {
-    "title": "Slope",
-    "thumb": "https://raw.githubusercontent.com/tuhidul/Slope-Game/master/slope.png",
-    "url": "https://slopegame.io",
+    "title": "1v1.LOL (Google Mirror)",
+    "thumb": "https://play-lh.googleusercontent.com/669n1T4M",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/1v1/1v1.xml",
     "category": "Games"
+  },
+  {
+    "title": "Retro Bowl (Google Mirror)",
+    "thumb": "https://play-lh.googleusercontent.com/TM_f_vS38392S28LpXh7Py6H8H8",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/retro-bowl/retro-bowl.xml",
+    "category": "Games"
+  },
+  {
+    "title": "Slope (Google Mirror)",
+    "thumb": "https://raw.githubusercontent.com/tuhidul/Slope-Game/master/slope.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/slope/slope.xml",
+    "category": "Games"
+  },
+  {
+    "title": "Roblox (Login via Proxy)",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg",
+    "url": "https://now.gg/play/roblox-corporation/5349/roblox",
+    "category": "Games",
+    "direct": true
+  },
+  {
+    "title": "Instagram (Use Proxy)",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png",
+    "url": "https://instagram.com",
+    "category": "Social Media",
+    "direct": true
+  },
+  {
+    "title": "Snapchat (Use Proxy)",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Snapchat_logo.svg",
+    "url": "https://web.snapchat.com",
+    "category": "Social Media",
+    "direct": true
   }
 ]
