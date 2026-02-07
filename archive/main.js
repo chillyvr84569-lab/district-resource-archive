@@ -1,73 +1,73 @@
-/* THE OMNIBUS ENGINE v12.0 */
+/* PROJECT ARCHIVE - BEAST ENGINE v15.0 */
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('games-grid');
-    const searchInput = document.getElementById('search');
+    const search = document.getElementById('search');
     const filterBtns = document.querySelectorAll('.filter-btn, button');
-    let MASTER_LIST = [];
+    let ALL_DATA = [];
 
-    // LOAD THE VAULT
+    // LOAD DATA
     fetch('./games.json')
         .then(res => res.json())
         .then(data => {
-            MASTER_LIST = data;
-            render(MASTER_LIST);
+            ALL_DATA = data;
+            render(ALL_DATA);
         })
         .catch(err => {
-            console.error("Vault Load Failed!", err);
-            if(grid) grid.innerHTML = `<h2 style="color:red;">JSON ERROR: Check line 366 for extra brackets!</h2>`;
+            console.error("JSON Error: Check for extra commas!", err);
+            if(grid) grid.innerHTML = `<h2 style="color:red; text-align:center;">VAULT CRASHED: Check JSON Line 366!</h2>`;
         });
 
     function render(list) {
         if(!grid) return;
         grid.innerHTML = '';
-        list.forEach(game => {
+        list.forEach(item => {
             const card = document.createElement('div');
             card.className = 'game-card';
             card.innerHTML = `
-                <div class="card-img-wrapper"><img src="${game.thumb}" loading="lazy" onerror="this.src='https://via.placeholder.com/150/111/444?text=Game'"></div>
+                <div class="card-img-wrapper"><img src="${item.thumb}" loading="lazy" onerror="this.src='https://via.placeholder.com/150/111/444?text=Archive'"></div>
                 <div class="card-content">
-                    <h3>${game.title}</h3>
-                    <span class="badge">${game.category}</span>
+                    <h3>${item.title}</h3>
+                    <span class="badge">${item.category}</span>
                     <button class="launch-btn">Launch</button>
                 </div>
             `;
-            card.querySelector('.launch-btn').onclick = () => launch(game);
+            card.querySelector('.launch-btn').onclick = () => launch(item);
             grid.appendChild(card);
         });
     }
 
-    function launch(game) {
-        if (game.cloak === false) {
-            window.open(game.url, '_blank');
+    function launch(item) {
+        if (item.cloak === false) {
+            window.open(item.url, '_blank');
             return;
         }
 
         const win = window.open('about:blank', '_blank');
-        if (!win) return alert("Popups blocked!");
+        if(!win) return alert("Please enable popups!");
 
         win.document.title = "Google Docs";
         const iframe = win.document.createElement('iframe');
         iframe.style = "position:fixed; top:0; left:0; width:100vw; height:100vh; border:none; margin:0; padding:0;";
-        iframe.src = game.url;
-        // Fixes black screen on shooters/3D games
+        iframe.src = item.url;
+        // Allows cursor-lock for 1v1.lol and Shell Shockers
         iframe.allow = "fullscreen; autoplay; cursor-lock; encrypted-media";
         
         win.document.body.appendChild(iframe);
         win.document.body.style.margin = "0";
     }
 
-    // SEARCH & FILTER LOGIC
-    if (searchInput) {
-        searchInput.oninput = (e) => {
+    // SEARCH & DYNAMIC FILTER
+    if(search) {
+        search.oninput = (e) => {
             const val = e.target.value.toLowerCase();
-            render(MASTER_LIST.filter(g => g.title.toLowerCase().includes(val)));
+            render(ALL_DATA.filter(i => i.title.toLowerCase().includes(val)));
         };
     }
 
     filterBtns.forEach(btn => {
         btn.onclick = () => {
-            const cat = btn.innerText;
-            render(cat === 'All' ? MASTER_LIST : MASTER_LIST.filter(g => g.category === cat));
+            const cat = btn.innerText.trim();
+            render(cat === 'All' ? ALL_DATA : ALL_DATA.filter(i => i.category === cat));
         };
     });
 });
