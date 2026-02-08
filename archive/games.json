@@ -5,10 +5,23 @@
     "thumb": "https://avatars.githubusercontent.com/u/86362337?s=200&v=4",
     "url": "https://nana.rh-1.govt.hu/",
     "category": "Proxies",
-    "server": "US-East-1",
-    "meta": "Fastest available web proxy",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "web",
+      "unblocker",
+      "fast"
+    ],
+    "meta": {
+      "description": "High-speed web proxy with persistent cookies.",
+      "server": "US-East-1",
+      "version": "v3.0.1"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "proxy-002",
@@ -16,21 +29,47 @@
     "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Chrome.png",
     "url": "https://uv.student-portal.biz/",
     "category": "Proxies",
-    "server": "EU-Central",
-    "meta": "Best for bypassing lightspeed",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "bypass",
+      "school",
+      "stealth"
+    ],
+    "meta": {
+      "description": "Advanced proxy for bypassing heavy filters.",
+      "server": "EU-Central",
+      "version": "v2.0"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "proxy-003",
-    "title": "Dogeblocker",
+    "title": "Doge Unblocker",
     "thumb": "https://doge-unblocker.com/favicon.ico",
     "url": "https://doge-unblocker.com",
     "category": "Proxies",
-    "server": "US-West",
-    "meta": "Classic unblocker suite",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "classic",
+      "reliable",
+      "doge"
+    ],
+    "meta": {
+      "description": "The classic doge-themed web unblocker.",
+      "server": "US-West",
+      "version": "v4.2"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "proxy-004",
@@ -38,10 +77,23 @@
     "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Interstellar.png",
     "url": "https://gointerstellar.app",
     "category": "Proxies",
-    "server": "Global",
-    "meta": "Modern UI proxy",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "modern",
+      "ui",
+      "clean"
+    ],
+    "meta": {
+      "description": "A beautiful proxy with a modern interface.",
+      "server": "Global-CDN",
+      "version": "v1.5"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "proxy-005",
@@ -49,10 +101,23 @@
     "thumb": "https://www.croxyproxy.com/favicon.ico",
     "url": "https://www.croxyproxy.com/",
     "category": "Proxies",
-    "server": "Direct",
-    "meta": "Non-cloaked reliable proxy",
-    "cloak": false,
-    "status": "online"
+    "tags": [
+      "direct",
+      "youtube",
+      "simple"
+    ],
+    "meta": {
+      "description": "Reliable proxy, works best for YouTube.",
+      "server": "Direct",
+      "version": "Legacy"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "proxy-006",
@@ -60,120 +125,239 @@
     "thumb": "https://nebula.xyz/favicon.ico",
     "url": "https://nebula.xyz",
     "category": "Proxies",
-    "server": "US-Central",
-    "meta": "Lightweight and fast",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "fast",
+      "minimal",
+      "cloud"
+    ],
+    "meta": {
+      "description": "Cloud-based proxy solution.",
+      "server": "US-Central",
+      "version": "v1.1"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "proxy-007",
+    "title": "Holy Unblocker",
+    "thumb": "https://holy-unblocker.pages.dev/favicon.ico",
+    "url": "https://holy-unblocker.pages.dev",
+    "category": "Proxies",
+    "tags": [
+      "secure",
+      "https",
+      "dev"
+    ],
+    "meta": {
+      "description": "Secure unblocker for developers.",
+      "server": "Pages",
+      "version": "v2.0"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "proxy-008",
     "title": "Kazwire",
     "thumb": "https://kazwire.com/favicon.ico",
     "url": "https://kazwire.com",
     "category": "Proxies",
-    "server": "US-East-2",
-    "meta": "High bandwidth proxy",
-    "cloak": true,
-    "status": "online"
-  },
-  {
-    "id": "social-001",
-    "title": "Discord (Web)",
-    "thumb": "https://assets-global.website-files.com/6257adef93867e56f84d3092/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png",
-    "url": "https://discord.com/app",
-    "category": "Social",
-    "server": "Direct",
-    "meta": "Chat with friends",
-    "cloak": false,
-    "status": "online"
-  },
-  {
-    "id": "social-002",
-    "title": "YouTube (Invidious)",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png",
-    "url": "https://yewtu.be/",
-    "category": "Social",
-    "server": "Mirror",
-    "meta": "Watch videos without ads",
-    "cloak": true,
-    "status": "online"
-  },
-  {
-    "id": "social-003",
-    "title": "TikTok (Urlebird)",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg",
-    "url": "https://urlebird.com/",
-    "category": "Social",
-    "server": "Mirror",
-    "meta": "View TikToks anonymously",
-    "cloak": true,
-    "status": "online"
-  },
-  {
-    "id": "social-004",
-    "title": "Reddit (Libreddit)",
-    "thumb": "https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png",
-    "url": "https://libreddit.spike.codes/",
-    "category": "Social",
-    "server": "Mirror",
-    "meta": "Private Reddit viewer",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "new",
+      "fast",
+      "wire"
+    ],
+    "meta": {
+      "description": "Next-gen proxy service.",
+      "server": "Global",
+      "version": "v1.0"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "fps-001",
     "title": "1v1.LOL",
     "thumb": "https://1v1.lol/favicon.ico",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/1v1/1v1.xml",
-    "category": "FPS",
-    "server": "Google-CDN",
-    "meta": "Building shooter",
-    "cloak": true,
-    "status": "online"
+    "category": "Shooter",
+    "tags": [
+      "build",
+      "shoot",
+      "fortnite"
+    ],
+    "meta": {
+      "description": "Building simulator and third-person shooter.",
+      "server": "Google-CDN",
+      "version": "Latest"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "fps-002",
-    "title": "Shell Shockers",
-    "thumb": "https://shellshock.io/favicon.ico",
-    "url": "https://shellshock.io/",
-    "category": "FPS",
-    "server": "Direct",
-    "meta": "Egg shooter",
-    "cloak": false,
-    "status": "online"
-  },
-  {
-    "id": "fps-003",
     "title": "Krunker.io",
     "thumb": "https://krunker.io/img/logo_3.png",
     "url": "https://krunker.io/",
-    "category": "FPS",
-    "server": "Direct",
-    "meta": "Fast paced voxel shooter",
-    "cloak": false,
-    "status": "online"
+    "category": "Shooter",
+    "tags": [
+      "fps",
+      "fast",
+      "voxel"
+    ],
+    "meta": {
+      "description": "Fast-paced pixelated first person shooter.",
+      "server": "Official",
+      "version": "Live"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "fps-003",
+    "title": "Shell Shockers",
+    "thumb": "https://shellshock.io/favicon.ico",
+    "url": "https://shellshock.io/",
+    "category": "Shooter",
+    "tags": [
+      "eggs",
+      "fps",
+      "funny"
+    ],
+    "meta": {
+      "description": "The world's premier egg-based shooter.",
+      "server": "BlueWizard",
+      "version": "Live"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "fps-004",
     "title": "Smash Karts",
     "thumb": "https://smashkarts.io/favicon.ico",
     "url": "https://smashkarts.io/",
-    "category": "FPS",
-    "server": "Direct",
-    "meta": "Mario Kart with guns",
-    "cloak": false,
-    "status": "online"
+    "category": "Shooter",
+    "tags": [
+      "driving",
+      "mario",
+      "battle"
+    ],
+    "meta": {
+      "description": "3D multiplayer kart battle game.",
+      "server": "Official",
+      "version": "Live"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "fps-005",
     "title": "Ev.io",
     "thumb": "https://ev.io/favicon.ico",
     "url": "https://ev.io/",
-    "category": "FPS",
-    "server": "Direct",
-    "meta": "Halo-style browser shooter",
-    "cloak": false,
-    "status": "online"
+    "category": "Shooter",
+    "tags": [
+      "halo",
+      "sci-fi",
+      "fps"
+    ],
+    "meta": {
+      "description": "Futuristic Halo-style browser FPS.",
+      "server": "Official",
+      "version": "Beta"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "fps-006",
+    "title": "Zombs Royale",
+    "thumb": "https://zombsroyale.io/favicon.ico",
+    "url": "https://zombsroyale.io/",
+    "category": "Shooter",
+    "tags": [
+      "battle-royale",
+      "2d",
+      "survival"
+    ],
+    "meta": {
+      "description": "2D Battle Royale game.",
+      "server": "Official",
+      "version": "Live"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "fps-007",
+    "title": "Build Royale",
+    "thumb": "https://buildroyale.io/favicon.ico",
+    "url": "https://buildroyale.io/",
+    "category": "Shooter",
+    "tags": [
+      "build",
+      "2d",
+      "royale"
+    ],
+    "meta": {
+      "description": "Building and shooting in 2D.",
+      "server": "Official",
+      "version": "Live"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "arc-001",
@@ -181,10 +365,23 @@
     "thumb": "https://raw.githubusercontent.com/tuhidul/Slope-Game/master/slope.png",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/slope/slope.xml",
     "category": "Arcade",
-    "server": "Google-CDN",
-    "meta": "Roll down the hill",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "speed",
+      "reflexes",
+      "3d"
+    ],
+    "meta": {
+      "description": "Control a ball rolling down a steep slope.",
+      "server": "Google-CDN",
+      "version": "Classic"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "arc-002",
@@ -192,10 +389,23 @@
     "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/subway-surfers.png",
     "url": "https://subway-surfers.github.io/",
     "category": "Arcade",
-    "server": "GitHub",
-    "meta": "Run from the guard",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "run",
+      "jump",
+      "trains"
+    ],
+    "meta": {
+      "description": "Endless runner mobile classic port.",
+      "server": "GitHub",
+      "version": "HTML5"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "arc-003",
@@ -203,131 +413,191 @@
     "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/geometry-dash.png",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/geometry-dash/geometry-dash.xml",
     "category": "Arcade",
-    "server": "Google-CDN",
-    "meta": "Jump to the beat",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "music",
+      "rhythm",
+      "hard"
+    ],
+    "meta": {
+      "description": "Rhythm-based platformer game.",
+      "server": "Google-CDN",
+      "version": "Scratch"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "arc-004",
-    "title": "Tunnel Rush",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/tunnel-rush.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/tunnel-rush/tunnel-rush.xml",
-    "category": "Arcade",
-    "server": "Google-CDN",
-    "meta": "Avoid the barriers",
-    "cloak": true,
-    "status": "online"
-  },
-  {
-    "id": "arc-005",
     "title": "Crossy Road",
     "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/crossy-road.png",
     "url": "https://crossy-road.github.io/",
     "category": "Arcade",
-    "server": "GitHub",
-    "meta": "Why did the chicken cross?",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "chicken",
+      "traffic",
+      "casual"
+    ],
+    "meta": {
+      "description": "Endless arcade hopper.",
+      "server": "GitHub",
+      "version": "HTML5"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "arc-005",
+    "title": "Temple Run 2",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/temple-run-2.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/temple-run-2/temple-run-2.xml",
+    "category": "Arcade",
+    "tags": [
+      "run",
+      "escape",
+      "3d"
+    ],
+    "meta": {
+      "description": "Escape the enemy in this endless runner.",
+      "server": "Google-CDN",
+      "version": "HTML5"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "arc-006",
+    "title": "Tunnel Rush",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/tunnel-rush.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/tunnel-rush/tunnel-rush.xml",
+    "category": "Arcade",
+    "tags": [
+      "speed",
+      "trippy",
+      "3d"
+    ],
+    "meta": {
+      "description": "Dodge obstacles in a high speed tunnel.",
+      "server": "Google-CDN",
+      "version": "v1.0"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "arc-007",
     "title": "Retro Bowl",
     "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/retro-bowl.png",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/retro-bowl/retro-bowl.xml",
     "category": "Sports",
-    "server": "Google-CDN",
-    "meta": "Pixel football manager",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "football",
+      "manager",
+      "pixel"
+    ],
+    "meta": {
+      "description": "American football management game.",
+      "server": "Google-CDN",
+      "version": "Latest"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
-    "id": "arc-007",
+    "id": "arc-008",
     "title": "Basket Random",
     "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/basket-random.png",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/basket-random/basket-random.xml",
     "category": "Sports",
-    "server": "Google-CDN",
-    "meta": "Wacky basketball physics",
-    "cloak": true,
-    "status": "online"
-  },
-  {
-    "id": "arc-008",
-    "title": "BitLife",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/bitlife.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/bitlife/bitlife.xml",
-    "category": "Sim",
-    "server": "Google-CDN",
-    "meta": "Life simulator",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "basketball",
+      "physics",
+      "funny"
+    ],
+    "meta": {
+      "description": "2 player basketball with random physics.",
+      "server": "Google-CDN",
+      "version": "v1.0"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "arc-009",
-    "title": "Cookie Clicker",
-    "thumb": "https://orteil.dashnet.org/cookieclicker/img/perfectCookie.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/cookie-clicker/cookie-clicker.xml",
-    "category": "Idle",
-    "server": "Google-CDN",
-    "meta": "Bake cookies forever",
-    "cloak": true,
-    "status": "online"
-  },
-  {
-    "id": "arc-010",
-    "title": "Paper.io 2",
-    "thumb": "https://paper-io.com/img/favicon.ico",
-    "url": "https://paper-io.com/",
-    "category": "IO",
-    "server": "Direct",
-    "meta": "Conquer territory",
-    "cloak": false,
-    "status": "online"
-  },
-  {
-    "id": "arc-011",
-    "title": "Agar.io",
-    "thumb": "https://agar.io/favicon.ico",
-    "url": "https://agar.io/",
-    "category": "IO",
-    "server": "Direct",
-    "meta": "Eat or be eaten",
-    "cloak": false,
-    "status": "online"
-  },
-  {
-    "id": "arc-012",
-    "title": "Slither.io",
-    "thumb": "https://slither.io/favicon.ico",
-    "url": "http://slither.io/",
-    "category": "IO",
-    "server": "Direct",
-    "meta": "Snake battle royale",
-    "cloak": false,
-    "status": "online"
-  },
-  {
-    "id": "arc-013",
     "title": "Vex 6",
     "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/vex-6.png",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/vex6/vex6.xml",
     "category": "Arcade",
-    "server": "Google-CDN",
-    "meta": "Hardcore stickman parkour",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "parkour",
+      "stickman",
+      "hard"
+    ],
+    "meta": {
+      "description": "Stickman parkour platformer.",
+      "server": "Google-CDN",
+      "version": "v6"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
-    "id": "arc-014",
+    "id": "arc-010",
     "title": "Doodle Jump",
     "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/doodle-jump.png",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/doodle-jump/doodle-jump.xml",
     "category": "Arcade",
-    "server": "Google-CDN",
-    "meta": "Jump up high",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "jump",
+      "classic",
+      "vertical"
+    ],
+    "meta": {
+      "description": "Jump as high as you can.",
+      "server": "Google-CDN",
+      "version": "Classic"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "ret-001",
@@ -335,10 +605,23 @@
     "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/minecraft.png",
     "url": "https://eaglercraft.com/mc/1.8.8/",
     "category": "Retro",
-    "server": "Eagler",
-    "meta": "Full Minecraft 1.8.8 in browser",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "sandbox",
+      "blocks",
+      "survival"
+    ],
+    "meta": {
+      "description": "Full Minecraft 1.8.8 playable in browser.",
+      "server": "Eagler",
+      "version": "1.8.8"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "ret-002",
@@ -346,10 +629,23 @@
     "thumb": "https://upload.wikimedia.org/wikipedia/en/6/6a/Super_Mario_64_box_cover.jpg",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/super-mario-64/super-mario-64.xml",
     "category": "Retro",
-    "server": "Google-CDN",
-    "meta": "Classic N64 platformer",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "nintendo",
+      "platformer",
+      "3d"
+    ],
+    "meta": {
+      "description": "The N64 classic ported to web.",
+      "server": "Google-CDN",
+      "version": "N64"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "ret-003",
@@ -357,65 +653,191 @@
     "thumb": "https://www.google.com/logos/2010/pacman10-hp.png",
     "url": "https://www.google.com/logos/2010/pacman10-i.html",
     "category": "Retro",
-    "server": "Google",
-    "meta": "The original arcade game",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "arcade",
+      "classic",
+      "ghosts"
+    ],
+    "meta": {
+      "description": "Google's 30th Anniversary Pac-Man.",
+      "server": "Google",
+      "version": "Anniversary"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "ret-004",
-    "title": "Tetris",
-    "thumb": "https://tetris.com/img/favicon.ico",
-    "url": "https://tetris.com/play-tetris",
-    "category": "Retro",
-    "server": "Official",
-    "meta": "Stack the blocks",
-    "cloak": false,
-    "status": "online"
-  },
-  {
-    "id": "ret-005",
     "title": "Doom",
     "thumb": "https://upload.wikimedia.org/wikipedia/en/5/57/Doom_cover_art.jpg",
     "url": "https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Fcustom%2Fdos%2Fdoom.jsdos?anonymous=1",
     "category": "Retro",
-    "server": "DOS-Zone",
-    "meta": "The grandfather of FPS",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "fps",
+      "gore",
+      "90s"
+    ],
+    "meta": {
+      "description": "The game that started it all.",
+      "server": "DOS-Zone",
+      "version": "Shareware"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
-    "id": "hor-001",
-    "title": "FNAF 1",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf1.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf/fnaf.xml",
-    "category": "Horror",
-    "server": "Google-CDN",
-    "meta": "Five Nights at Freddy's 1",
-    "cloak": true,
-    "status": "online"
+    "id": "fla-001",
+    "title": "Papa's Freezeria",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/6f542387192131.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/papas-freezeria/papas-freezeria.xml",
+    "category": "Flash",
+    "tags": [
+      "cooking",
+      "management",
+      "papa"
+    ],
+    "meta": {
+      "description": "Serve ice cream sundaes to customers.",
+      "server": "Google-CDN",
+      "version": "Ruffle"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
-    "id": "hor-002",
-    "title": "FNAF 2",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf2.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf2/fnaf2.xml",
-    "category": "Horror",
-    "server": "Google-CDN",
-    "meta": "Five Nights at Freddy's 2",
-    "cloak": true,
-    "status": "online"
+    "id": "fla-002",
+    "title": "Papa's Pizzeria",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/papas-pizzeria.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/papas-pizzeria/papas-pizzeria.xml",
+    "category": "Flash",
+    "tags": [
+      "cooking",
+      "pizza",
+      "papa"
+    ],
+    "meta": {
+      "description": "Bake and serve pizzas.",
+      "server": "Google-CDN",
+      "version": "Ruffle"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
-    "id": "hor-003",
-    "title": "FNAF 3",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf3.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf3/fnaf3.xml",
-    "category": "Horror",
-    "server": "Google-CDN",
-    "meta": "Five Nights at Freddy's 3",
-    "cloak": true,
-    "status": "online"
+    "id": "fla-003",
+    "title": "Jacksmith",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/jacksmith.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/jacksmith/jacksmith.xml",
+    "category": "Flash",
+    "tags": [
+      "forging",
+      "rpg",
+      "strategy"
+    ],
+    "meta": {
+      "description": "Forge weapons for warriors.",
+      "server": "Google-CDN",
+      "version": "Ruffle"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "soc-001",
+    "title": "Discord",
+    "thumb": "https://assets-global.website-files.com/6257adef93867e56f84d3092/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png",
+    "url": "https://discord.com/app",
+    "category": "Social",
+    "tags": [
+      "chat",
+      "voice",
+      "friends"
+    ],
+    "meta": {
+      "description": "Talk, chat, and hang out.",
+      "server": "Direct",
+      "version": "Web"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "soc-002",
+    "title": "TikTok Mirror",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg",
+    "url": "https://urlebird.com/",
+    "category": "Social",
+    "tags": [
+      "video",
+      "short",
+      "mirror"
+    ],
+    "meta": {
+      "description": "Watch TikToks without the app.",
+      "server": "Urlebird",
+      "version": "Web"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "soc-003",
+    "title": "YouTube Mirror",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png",
+    "url": "https://yewtu.be/",
+    "category": "Social",
+    "tags": [
+      "video",
+      "stream",
+      "privacy"
+    ],
+    "meta": {
+      "description": "Privacy-focused YouTube frontend.",
+      "server": "Invidious",
+      "version": "Web"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "tool-001",
@@ -423,86 +845,310 @@
     "thumb": "https://openai.com/favicon.ico",
     "url": "https://chat.shuttle.rip/",
     "category": "Tools",
-    "server": "Shuttle",
-    "meta": "AI Assistant Unblocked",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "ai",
+      "chat",
+      "bot"
+    ],
+    "meta": {
+      "description": "Free access to AI chat.",
+      "server": "Shuttle",
+      "version": "v1.0"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "tool-002",
-    "title": "VS Code Web",
+    "title": "VS Code Online",
     "thumb": "https://vscode.dev/static/stable/favicon.ico",
     "url": "https://vscode.dev",
     "category": "Tools",
-    "server": "Microsoft",
-    "meta": "Code editor in browser",
-    "cloak": false,
-    "status": "online"
+    "tags": [
+      "code",
+      "editor",
+      "dev"
+    ],
+    "meta": {
+      "description": "Professional code editor in browser.",
+      "server": "Microsoft",
+      "version": "Web"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
     "id": "tool-003",
-    "title": "Cloud GBA",
-    "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/GBA.png",
-    "url": "https://web.retrogames.cc/",
-    "category": "Tools",
-    "server": "RetroGames",
-    "meta": "Play GBA games online",
-    "cloak": true,
-    "status": "online"
-  },
-  {
-    "id": "tool-004",
     "title": "Geforce Now",
     "thumb": "https://www.nvidia.com/favicon.ico",
     "url": "https://play.geforcenow.com",
     "category": "Tools",
-    "server": "Nvidia",
-    "meta": "Cloud Gaming PC",
-    "cloak": false,
-    "status": "online"
+    "tags": [
+      "cloud",
+      "gaming",
+      "pc"
+    ],
+    "meta": {
+      "description": "Stream high-end PC games.",
+      "server": "Nvidia",
+      "version": "Web"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
-    "id": "extra-001",
-    "title": "Papa's Freezeria",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/6f542387192131.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/papas-freezeria/papas-freezeria.xml",
-    "category": "Flash",
-    "server": "Google-CDN",
-    "meta": "Serve ice cream",
-    "cloak": true,
-    "status": "online"
+    "id": "ext-001",
+    "title": "BitLife",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/bitlife.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/bitlife/bitlife.xml",
+    "category": "Sim",
+    "tags": [
+      "life",
+      "text",
+      "choices"
+    ],
+    "meta": {
+      "description": "Live a virtual life.",
+      "server": "Google-CDN",
+      "version": "HTML5"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
-    "id": "extra-002",
-    "title": "Papa's Pizzeria",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/papas-pizzeria.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/papas-pizzeria/papas-pizzeria.xml",
-    "category": "Flash",
-    "server": "Google-CDN",
-    "meta": "Bake pizzas",
-    "cloak": true,
-    "status": "online"
+    "id": "ext-002",
+    "title": "Cookie Clicker",
+    "thumb": "https://orteil.dashnet.org/cookieclicker/img/perfectCookie.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/cookie-clicker/cookie-clicker.xml",
+    "category": "Idle",
+    "tags": [
+      "clicker",
+      "upgrade",
+      "cookies"
+    ],
+    "meta": {
+      "description": "Bake billions of cookies.",
+      "server": "Google-CDN",
+      "version": "Classic"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   },
   {
-    "id": "extra-003",
-    "title": "Wordle",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Wordle_196_example.svg",
-    "url": "https://www.nytimes.com/games/wordle/index.html",
-    "category": "Puzzle",
-    "server": "NYT",
-    "meta": "Guess the word",
-    "cloak": false,
-    "status": "online"
-  },
-  {
-    "id": "extra-004",
+    "id": "ext-003",
     "title": "2048",
     "thumb": "https://play2048.co/favicon.ico",
     "url": "https://play2048.co/",
     "category": "Puzzle",
-    "server": "Direct",
-    "meta": "Combine numbers",
-    "cloak": true,
-    "status": "online"
+    "tags": [
+      "math",
+      "logic",
+      "sliding"
+    ],
+    "meta": {
+      "description": "Combine tiles to reach 2048.",
+      "server": "Direct",
+      "version": "HTML5"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "ext-004",
+    "title": "Wordle",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Wordle_196_example.svg",
+    "url": "https://www.nytimes.com/games/wordle/index.html",
+    "category": "Puzzle",
+    "tags": [
+      "words",
+      "daily",
+      "brain"
+    ],
+    "meta": {
+      "description": "Guess the 5-letter word.",
+      "server": "NYT",
+      "version": "Web"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "ext-005",
+    "title": "Agar.io",
+    "thumb": "https://agar.io/favicon.ico",
+    "url": "https://agar.io/",
+    "category": "IO",
+    "tags": [
+      "cells",
+      "eat",
+      "multiplayer"
+    ],
+    "meta": {
+      "description": "Grow your cell by eating others.",
+      "server": "Official",
+      "version": "Web"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "ext-006",
+    "title": "Slither.io",
+    "thumb": "https://slither.io/favicon.ico",
+    "url": "http://slither.io/",
+    "category": "IO",
+    "tags": [
+      "snake",
+      "multiplayer",
+      "grow"
+    ],
+    "meta": {
+      "description": "Become the longest snake.",
+      "server": "Official",
+      "version": "Web"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "ext-007",
+    "title": "Paper.io 2",
+    "thumb": "https://paper-io.com/img/favicon.ico",
+    "url": "https://paper-io.com/",
+    "category": "IO",
+    "tags": [
+      "territory",
+      "strategy",
+      "color"
+    ],
+    "meta": {
+      "description": "Conquer the most territory.",
+      "server": "Official",
+      "version": "Web"
+    },
+    "settings": {
+      "cloak": false,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "hor-001",
+    "title": "FNAF 1",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf1.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf/fnaf.xml",
+    "category": "Horror",
+    "tags": [
+      "scary",
+      "robots",
+      "survival"
+    ],
+    "meta": {
+      "description": "Survive the night shift.",
+      "server": "Google-CDN",
+      "version": "Port"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "hor-002",
+    "title": "FNAF 2",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf2.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf2/fnaf2.xml",
+    "category": "Horror",
+    "tags": [
+      "scary",
+      "mask",
+      "survival"
+    ],
+    "meta": {
+      "description": "No doors, just a mask.",
+      "server": "Google-CDN",
+      "version": "Port"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
+  },
+  {
+    "id": "hor-003",
+    "title": "FNAF 3",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf3.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf3/fnaf3.xml",
+    "category": "Horror",
+    "tags": [
+      "scary",
+      "springtrap",
+      "survival"
+    ],
+    "meta": {
+      "description": "Keep the ventilation running.",
+      "server": "Google-CDN",
+      "version": "Port"
+    },
+    "settings": {
+      "cloak": true,
+      "width": "100%",
+      "height": "100%"
+    },
+    "status": "online",
+    "added": "2026-02-08"
   }
 ]
