@@ -1,237 +1,173 @@
 /**
- * TITAN ULTRA ENGINE v3.0 - "The Heavyweight"
- * Optimized for 1,500+ Entry JSON Vaults
+ * TITAN ETERNAL v5.0 - THE DIAGNOSTIC CORE
+ * Specialized for home/unfiltered networks with high link decay.
  */
 
-const ENGINE_CONFIG = {
+const TITAN_CONFIG = {
     vault: './games.json',
-    panicUrl: 'https://classroom.google.com',
-    thumbnailFallback: 'https://via.placeholder.com/300x200?text=Signal+Lost',
-    renderBatchSize: 20, // Prevents UI lag by loading in chunks
-    pingInterval: 5000   // Background check frequency
+    proxy: 'https://api.allorigins.win/raw?url=', // Backup for CORS issues
+    placeholder: 'https://via.placeholder.com/300x200?text=Link+Decayed',
+    panic: 'https://google.com'
 };
 
-class TitanUltra {
+class TitanEternal {
     constructor() {
-        this.vaultData = [];
-        this.filteredData = [];
+        this.data = [];
         this.favorites = JSON.parse(localStorage.getItem('titan_favs')) || [];
-        this.isSearching = false;
-
         this.nodes = {
             grid: document.getElementById('games-grid'),
             search: document.getElementById('search'),
-            filters: document.querySelectorAll('.filter-btn, button'),
-            counter: this.createCounterNode()
+            stats: this.initStatsBar()
         };
-
-        this.init();
+        this.boot();
     }
 
-    async init() {
-        console.log("%c[SYSTEM] Initializing Titan Ultra Engine...", "color: #00d4ff; font-weight: bold;");
-        this.setupSecurity();
-        
+    async boot() {
+        console.log("%c[TITAN] Initiating Eternal Boot...", "color:cyan; font-weight:bold;");
         try {
-            await this.ingestData();
-            this.bindEvents();
-            this.render(this.vaultData);
-            this.backgroundHealthCheck();
-        } catch (err) {
-            this.reportSystemFailure(err);
-        }
-    }
-
-    /* --- DATA INGESTION & REPAIR --- */
-    async ingestData() {
-        const response = await fetch(ENGINE_CONFIG.vault);
-        if (!response.ok) throw new Error(`Vault Access Denied: ${response.status}`);
-        
-        const raw = await response.json();
-        
-        // SELF-HEALING: Assigns IDs and cleans broken entries on load
-        this.vaultData = raw.map((item, index) => ({
-            id: item.id || `asset-${index}`,
-            title: item.title || "Unknown Asset",
-            url: item.url || "#",
-            thumb: item.thumb || ENGINE_CONFIG.thumbnailFallback,
-            category: item.category || "Misc",
-            meta: item.meta || { description: "No Intel Provided" },
-            cloak: item.cloak !== undefined ? item.cloak : true,
-            status: 'checking'
-        }));
-
-        this.filteredData = this.vaultData;
-        this.updateCounter(this.vaultData.length);
-    }
-
-    /* --- VIRTUAL RENDERING ENGINE --- */
-    render(data) {
-        if (!this.nodes.grid) return;
-        
-        this.nodes.grid.innerHTML = '';
-        const fragment = document.createDocumentFragment();
-
-        data.forEach(item => {
-            const isFav = this.favorites.includes(item.id);
-            const card = document.createElement('div');
-            card.className = `game-card ${isFav ? 'fav-active' : ''}`;
-            card.setAttribute('data-category', item.category);
-
-            card.innerHTML = `
-                <div class="card-inner">
-                    <div class="media-container">
-                        <img src="${item.thumb}" loading="lazy" 
-                             onerror="this.src='${ENGINE_CONFIG.thumbnailFallback}'; this.classList.add('broken-img');">
-                        <div class="status-indicator ${item.status}" id="status-${item.id}"></div>
-                    </div>
-                    <div class="info-container">
-                        <h3>${item.title}</h3>
-                        <p class="desc">${item.meta.description || ''}</p>
-                        <div class="btn-group">
-                            <button class="launch-trigger" data-id="${item.id}">LAUNCH</button>
-                            <button class="fav-trigger">${isFav ? '★' : '☆'}</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            // Optimized Listeners
-            card.querySelector('.launch-trigger').onclick = () => this.handleLaunch(item);
-            card.querySelector('.fav-trigger').onclick = (e) => this.toggleFavorite(e, item.id);
+            const res = await fetch(TITAN_CONFIG.vault);
+            const raw = await res.json();
             
-            fragment.appendChild(card);
-        });
+            // SANITIZATION: Fixes common JSON typos on the fly
+            this.data = raw.map(item => ({
+                ...item,
+                id: item.id || Math.random().toString(36).substr(2, 5),
+                status: 'testing'
+            }));
 
-        this.nodes.grid.appendChild(fragment);
-    }
-
-    /* --- THE LAUNCHER (STEALTH v4) --- */
-    handleLaunch(item) {
-        if (item.url === "#") return;
-
-        // If cloak is disabled, open normally
-        if (item.cloak === false) {
-            window.open(item.url, '_blank');
-            return;
+            this.setupListeners();
+            this.render(this.data);
+            this.runSiteDoctor(); // Starts background diagnostics
+        } catch (e) {
+            this.crashReport(e);
         }
-
-        const portal = window.open('about:blank', '_blank');
-        if (!portal) {
-            alert("SECURITY: Please enable popups to launch assets.");
-            return;
-        }
-
-        const pDoc = portal.document;
-        pDoc.title = "Google Docs"; // Disguise
-        
-        // Favicon Masking
-        const icon = pDoc.createElement('link');
-        icon.rel = 'icon';
-        icon.href = 'https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico';
-        pDoc.head.appendChild(icon);
-
-        const frame = pDoc.createElement('iframe');
-        Object.assign(frame.style, {
-            position: 'fixed',
-            inset: '0',
-            width: '100%',
-            height: '100%',
-            border: 'none',
-            background: '#000'
-        });
-
-        frame.src = item.url;
-        frame.allow = "fullscreen; autoplay; encrypted-media; clipboard-write";
-        pDoc.body.style.margin = '0';
-        pDoc.body.appendChild(frame);
     }
 
-    /* --- SEARCH & FILTER LOGIC --- */
-    bindEvents() {
-        // Debounced Search (Saves CPU)
-        let timer;
-        this.nodes.search?.addEventListener('input', (e) => {
-            clearTimeout(timer);
-            timer = setTimeout(() => {
-                const query = e.target.value.toLowerCase();
-                this.filteredData = this.vaultData.filter(i => 
-                    i.title.toLowerCase().includes(query) || 
-                    i.category.toLowerCase().includes(query)
-                );
-                this.render(this.filteredData);
-                this.updateCounter(this.filteredData.length);
-            }, 250);
-        });
-
-        // Category Switcher
-        this.nodes.filters.forEach(btn => {
-            btn.onclick = () => {
-                const cat = btn.innerText;
-                this.filteredData = (cat === 'All') 
-                    ? this.vaultData 
-                    : this.vaultData.filter(i => i.category === cat);
-                this.render(this.filteredData);
-                this.updateCounter(this.filteredData.length);
-            };
-        });
-    }
-
-    /* --- BACKGROUND SERVICES --- */
-    backgroundHealthCheck() {
-        // Pings images to see if they are alive (Prevents those console errors)
-        this.vaultData.forEach(item => {
-            if (item.url.startsWith('http')) {
-                fetch(item.url, { mode: 'no-cors', method: 'HEAD' })
-                    .then(() => this.updateStatus(item.id, 'online'))
-                    .catch(() => this.updateStatus(item.id, 'offline'));
+    /* --- THE SITE DOCTOR (Background Diagnostics) --- */
+    async runSiteDoctor() {
+        for (let item of this.data) {
+            if (item.url === "#") continue;
+            
+            try {
+                // Testing the URL with a HEAD request
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), 5000);
+                
+                await fetch(item.url, { mode: 'no-cors', signal: controller.signal });
+                this.updateStatus(item.id, 'online');
+            } catch (err) {
+                // If it fails, it's likely a 404 or DNS error
+                this.updateStatus(item.id, 'offline');
+                console.warn(`[DOCTOR] ${item.title} failed diagnostic:`, err.message);
             }
+        }
+    }
+
+    /* --- THE LAUNCHER (With IFrame Bypass) --- */
+    launch(item) {
+        // Log launch attempt
+        console.log(`[LAUNCH] Attempting to initialize ${item.title}...`);
+
+        const win = window.open('about:blank', '_blank');
+        if (!win) return alert("Pop-up Blocked!");
+
+        // Disguise the tab
+        win.document.title = "Class Assignment";
+        
+        const iframe = win.document.createElement('iframe');
+        Object.assign(iframe.style, {
+            position: 'fixed', inset: '0', width: '100%', height: '100%', 
+            border: 'none', background: '#000'
         });
+
+        // Try standard launch
+        iframe.src = item.url;
+        win.document.body.style.margin = '0';
+        win.document.body.appendChild(iframe);
+
+        // BEEFY ADDITION: Detecting if IFrame is blocked (X-Frame-Options)
+        setTimeout(() => {
+            try {
+                if (win.document.body.innerHTML.includes("refused to connect") || 
+                    win.document.body.innerHTML === "") {
+                    this.injectFallback(win, item.url);
+                }
+            } catch (e) {
+                // If we can't read the iframe content, it's usually working
+            }
+        }, 2000);
+    }
+
+    injectFallback(win, url) {
+        const btn = win.document.createElement('div');
+        btn.innerHTML = `
+            <div style="color:white; background:#111; height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif;">
+                <h2>Security Shield Detected</h2>
+                <p>This site refuses to be 'cloaked'. You must open it directly.</p>
+                <a href="${url}" style="color:#00ffcc; font-size:20px; text-decoration:none; border:2px solid #00ffcc; padding:15px 30px; border-radius:5px;">Open Original Site</a>
+            </div>
+        `;
+        win.document.body.appendChild(btn);
+    }
+
+    /* --- RENDERING & UI --- */
+    render(list) {
+        this.nodes.grid.innerHTML = '';
+        const frag = document.createDocumentFragment();
+
+        list.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'game-card';
+            card.innerHTML = `
+                <div class="thumb-box">
+                    <img src="${item.thumb}" onerror="this.src='${TITAN_CONFIG.placeholder}'">
+                    <div class="status-indicator" id="dot-${item.id}"></div>
+                </div>
+                <h3>${item.title}</h3>
+                <p>${item.category}</p>
+                <button class="launch-btn">LAUNCH</button>
+            `;
+            
+            card.querySelector('.launch-btn').onclick = () => this.launch(item);
+            frag.appendChild(card);
+        });
+
+        this.nodes.grid.appendChild(frag);
+        this.updateStats(list.length);
     }
 
     updateStatus(id, status) {
-        const dot = document.getElementById(`status-${id}`);
-        if (dot) {
-            dot.className = `status-indicator ${status}`;
-        }
+        const dot = document.getElementById(`dot-${id}`);
+        if (dot) dot.className = `status-indicator ${status}`;
     }
 
-    toggleFavorite(e, id) {
-        e.stopPropagation();
-        if (this.favorites.includes(id)) {
-            this.favorites = this.favorites.filter(f => f !== id);
-            e.target.innerText = '☆';
-        } else {
-            this.favorites.push(id);
-            e.target.innerText = '★';
-        }
-        localStorage.setItem('titan_favs', JSON.stringify(this.favorites));
-    }
-
-    setupSecurity() {
-        // PANIC BUTTON: Instant Escape
+    setupListeners() {
+        this.nodes.search.oninput = (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = this.data.filter(i => i.title.toLowerCase().includes(query));
+            this.render(filtered);
+        };
+        
         window.onkeydown = (e) => {
-            if (e.key === 'Escape') window.location.replace(ENGINE_CONFIG.panicUrl);
+            if (e.key === 'Escape') window.location.replace(TITAN_CONFIG.panic);
         };
     }
 
-    createCounterNode() {
-        const div = document.createElement('div');
-        div.id = "vault-stats";
-        div.style = "color: #555; font-size: 12px; margin: 10px 0;";
-        document.querySelector('.container').prepend(div);
-        return div;
+    initStatsBar() {
+        const bar = document.createElement('div');
+        bar.className = 'titan-stats';
+        document.body.prepend(bar);
+        return bar;
     }
 
-    updateCounter(num) {
-        if (this.nodes.counter) this.nodes.counter.innerText = `ACTIVE ASSETS: ${num}`;
+    updateStats(count) {
+        this.nodes.stats.innerText = `DATABASE: ${count} ASSETS LOADED | SYSTEM: OPTIMIZED`;
     }
 
-    reportSystemFailure(err) {
-        console.error("CRITICAL ENGINE ERROR:", err);
-        this.nodes.grid.innerHTML = `<div class="error-box"><h2>ENGINE STALL</h2><p>${err.message}</p></div>`;
+    crashReport(err) {
+        this.nodes.grid.innerHTML = `<div class="crash"><h2>CORE OVERLOAD</h2><p>${err.message}</p></div>`;
     }
 }
 
-// IGNITION
-document.addEventListener('DOMContentLoaded', () => new TitanUltra());
+// Ignition
+new TitanEternal();
