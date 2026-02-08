@@ -105,3 +105,31 @@ header {
     display: inline-block;
     font-family: monospace;
 }
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #555; /* Default gray */
+}
+.status-indicator.online { background: #00ff88; box-shadow: 0 0 8px #00ff88; }
+.status-indicator.offline { background: #ff4444; }
+
+.fav-trigger {
+    background: transparent;
+    border: none;
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.broken-img {
+    filter: grayscale(1) opacity(0.5);
+}
+
+.vault-stats {
+    font-family: monospace;
+    letter-spacing: 1px;
+}
