@@ -1,366 +1,508 @@
 [
   {
-    "title": "Truffled Proxy",
-    "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Steam.png",
-    "url": "https://tucdn.yolearn.org/",
-    "category": "Proxies",
-    "cloak": true
-  },
-  {
-    "title": "Rammerhead Stable",
+    "id": "proxy-001",
+    "title": "Rammerhead (Titanium)",
     "thumb": "https://avatars.githubusercontent.com/u/86362337?s=200&v=4",
     "url": "https://nana.rh-1.govt.hu/",
     "category": "Proxies",
-    "cloak": true
+    "server": "US-East-1",
+    "meta": "Fastest available web proxy",
+    "cloak": true,
+    "status": "online"
   },
   {
-    "title": "Obsidian Proxy",
-    "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Safari.png",
-    "url": "https://cv-1.ynet.io/",
-    "category": "Proxies",
-    "cloak": true
-  },
-  {
-    "title": "Interstellar",
-    "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Interstellar.png",
-    "url": "https://gointerstellar.app",
-    "category": "Proxies",
-    "cloak": true
-  },
-  {
+    "id": "proxy-002",
     "title": "Ultraviolet (UV)",
     "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Chrome.png",
     "url": "https://uv.student-portal.biz/",
     "category": "Proxies",
-    "cloak": true
+    "server": "EU-Central",
+    "meta": "Best for bypassing lightspeed",
+    "cloak": true,
+    "status": "online"
   },
   {
-    "title": "Doge Unblocker",
+    "id": "proxy-003",
+    "title": "Dogeblocker",
     "thumb": "https://doge-unblocker.com/favicon.ico",
     "url": "https://doge-unblocker.com",
     "category": "Proxies",
-    "cloak": true
+    "server": "US-West",
+    "meta": "Classic unblocker suite",
+    "cloak": true,
+    "status": "online"
   },
   {
-    "title": "Nebula Proxy",
-    "thumb": "https://nebula.xyz/favicon.ico",
-    "url": "https://nebula.xyz",
+    "id": "proxy-004",
+    "title": "Interstellar",
+    "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/Interstellar.png",
+    "url": "https://gointerstellar.app",
     "category": "Proxies",
-    "cloak": true
+    "server": "Global",
+    "meta": "Modern UI proxy",
+    "cloak": true,
+    "status": "online"
   },
   {
-    "title": "Holy Unblocker",
-    "thumb": "https://holy-unblocker.pages.dev/favicon.ico",
-    "url": "https://holy-unblocker.pages.dev",
-    "category": "Proxies",
-    "cloak": true
-  },
-  {
-    "title": "Kazwire",
-    "thumb": "https://kazwire.com/favicon.ico",
-    "url": "https://kazwire.com",
-    "category": "Proxies",
-    "cloak": true
-  },
-  {
+    "id": "proxy-005",
     "title": "CroxyProxy",
     "thumb": "https://www.croxyproxy.com/favicon.ico",
     "url": "https://www.croxyproxy.com/",
     "category": "Proxies",
-    "cloak": false
+    "server": "Direct",
+    "meta": "Non-cloaked reliable proxy",
+    "cloak": false,
+    "status": "online"
   },
   {
-    "title": "Discord",
+    "id": "proxy-006",
+    "title": "Nebula",
+    "thumb": "https://nebula.xyz/favicon.ico",
+    "url": "https://nebula.xyz",
+    "category": "Proxies",
+    "server": "US-Central",
+    "meta": "Lightweight and fast",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "proxy-007",
+    "title": "Kazwire",
+    "thumb": "https://kazwire.com/favicon.ico",
+    "url": "https://kazwire.com",
+    "category": "Proxies",
+    "server": "US-East-2",
+    "meta": "High bandwidth proxy",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "social-001",
+    "title": "Discord (Web)",
     "thumb": "https://assets-global.website-files.com/6257adef93867e56f84d3092/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png",
     "url": "https://discord.com/app",
     "category": "Social",
-    "cloak": false
+    "server": "Direct",
+    "meta": "Chat with friends",
+    "cloak": false,
+    "status": "online"
   },
   {
-    "title": "TikTok (Urlebird)",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg",
-    "url": "https://urlebird.com/",
-    "category": "Social",
-    "cloak": true
-  },
-  {
+    "id": "social-002",
     "title": "YouTube (Invidious)",
     "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png",
     "url": "https://yewtu.be/",
     "category": "Social",
-    "cloak": true
+    "server": "Mirror",
+    "meta": "Watch videos without ads",
+    "cloak": true,
+    "status": "online"
   },
   {
-    "title": "Reddit Mirror",
+    "id": "social-003",
+    "title": "TikTok (Urlebird)",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg",
+    "url": "https://urlebird.com/",
+    "category": "Social",
+    "server": "Mirror",
+    "meta": "View TikToks anonymously",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "social-004",
+    "title": "Reddit (Libreddit)",
     "thumb": "https://www.redditstatic.com/desktop2x/img/favicon/favicon-96x96.png",
     "url": "https://libreddit.spike.codes/",
     "category": "Social",
-    "cloak": true
+    "server": "Mirror",
+    "meta": "Private Reddit viewer",
+    "cloak": true,
+    "status": "online"
   },
   {
+    "id": "fps-001",
     "title": "1v1.LOL",
     "thumb": "https://1v1.lol/favicon.ico",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/1v1/1v1.xml",
-    "category": "Games",
-    "cloak": true
+    "category": "FPS",
+    "server": "Google-CDN",
+    "meta": "Building shooter",
+    "cloak": true,
+    "status": "online"
   },
   {
-    "title": "Cookie Clicker",
-    "thumb": "https://orteil.dashnet.org/cookieclicker/img/perfectCookie.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/cookie-clicker/cookie-clicker.xml",
-    "category": "Games",
-    "cloak": true
+    "id": "fps-002",
+    "title": "Shell Shockers",
+    "thumb": "https://shellshock.io/favicon.ico",
+    "url": "https://shellshock.io/",
+    "category": "FPS",
+    "server": "Direct",
+    "meta": "Egg shooter",
+    "cloak": false,
+    "status": "online"
   },
   {
-    "title": "Minecraft (Eagler)",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/minecraft.png",
-    "url": "https://eaglercraft.com/mc/1.8.8/",
-    "category": "Games",
-    "cloak": true
+    "id": "fps-003",
+    "title": "Krunker.io",
+    "thumb": "https://krunker.io/img/logo_3.png",
+    "url": "https://krunker.io/",
+    "category": "FPS",
+    "server": "Direct",
+    "meta": "Fast paced voxel shooter",
+    "cloak": false,
+    "status": "online"
   },
   {
-    "title": "Slope",
-    "thumb": "https://raw.githubusercontent.com/tuhidul/Slope-Game/master/slope.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/slope/slope.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Retro Bowl",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/retro-bowl.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/retro-bowl/retro-bowl.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "FNAF 1",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf1.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf/fnaf.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "FNAF 2",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf2.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf2/fnaf2.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "BitLife",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/bitlife.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/bitlife/bitlife.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Subway Surfers",
-    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/subway-surfers.png",
-    "url": "https://subway-surfers.github.io/",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Geometry Dash",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/geometry-dash.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/geometry-dash/geometry-dash.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Paper.io 2",
-    "thumb": "https://paper-io.com/img/favicon.ico",
-    "url": "https://paper-io.com/",
-    "category": "Games",
-    "cloak": false
-  },
-  {
+    "id": "fps-004",
     "title": "Smash Karts",
     "thumb": "https://smashkarts.io/favicon.ico",
     "url": "https://smashkarts.io/",
-    "category": "Games",
-    "cloak": false
+    "category": "FPS",
+    "server": "Direct",
+    "meta": "Mario Kart with guns",
+    "cloak": false,
+    "status": "online"
   },
   {
+    "id": "fps-005",
+    "title": "Ev.io",
+    "thumb": "https://ev.io/favicon.ico",
+    "url": "https://ev.io/",
+    "category": "FPS",
+    "server": "Direct",
+    "meta": "Halo-style browser shooter",
+    "cloak": false,
+    "status": "online"
+  },
+  {
+    "id": "arc-001",
+    "title": "Slope",
+    "thumb": "https://raw.githubusercontent.com/tuhidul/Slope-Game/master/slope.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/slope/slope.xml",
+    "category": "Arcade",
+    "server": "Google-CDN",
+    "meta": "Roll down the hill",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "arc-002",
+    "title": "Subway Surfers",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/subway-surfers.png",
+    "url": "https://subway-surfers.github.io/",
+    "category": "Arcade",
+    "server": "GitHub",
+    "meta": "Run from the guard",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "arc-003",
+    "title": "Geometry Dash",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/geometry-dash.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/geometry-dash/geometry-dash.xml",
+    "category": "Arcade",
+    "server": "Google-CDN",
+    "meta": "Jump to the beat",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "arc-004",
+    "title": "Tunnel Rush",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/tunnel-rush.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/tunnel-rush/tunnel-rush.xml",
+    "category": "Arcade",
+    "server": "Google-CDN",
+    "meta": "Avoid the barriers",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "arc-005",
+    "title": "Crossy Road",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/crossy-road.png",
+    "url": "https://crossy-road.github.io/",
+    "category": "Arcade",
+    "server": "GitHub",
+    "meta": "Why did the chicken cross?",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "arc-006",
+    "title": "Retro Bowl",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/retro-bowl.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/retro-bowl/retro-bowl.xml",
+    "category": "Sports",
+    "server": "Google-CDN",
+    "meta": "Pixel football manager",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "arc-007",
+    "title": "Basket Random",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/basket-random.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/basket-random/basket-random.xml",
+    "category": "Sports",
+    "server": "Google-CDN",
+    "meta": "Wacky basketball physics",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "arc-008",
+    "title": "BitLife",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/bitlife.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/bitlife/bitlife.xml",
+    "category": "Sim",
+    "server": "Google-CDN",
+    "meta": "Life simulator",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "arc-009",
+    "title": "Cookie Clicker",
+    "thumb": "https://orteil.dashnet.org/cookieclicker/img/perfectCookie.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/cookie-clicker/cookie-clicker.xml",
+    "category": "Idle",
+    "server": "Google-CDN",
+    "meta": "Bake cookies forever",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "arc-010",
+    "title": "Paper.io 2",
+    "thumb": "https://paper-io.com/img/favicon.ico",
+    "url": "https://paper-io.com/",
+    "category": "IO",
+    "server": "Direct",
+    "meta": "Conquer territory",
+    "cloak": false,
+    "status": "online"
+  },
+  {
+    "id": "arc-011",
+    "title": "Agar.io",
+    "thumb": "https://agar.io/favicon.ico",
+    "url": "https://agar.io/",
+    "category": "IO",
+    "server": "Direct",
+    "meta": "Eat or be eaten",
+    "cloak": false,
+    "status": "online"
+  },
+  {
+    "id": "arc-012",
+    "title": "Slither.io",
+    "thumb": "https://slither.io/favicon.ico",
+    "url": "http://slither.io/",
+    "category": "IO",
+    "server": "Direct",
+    "meta": "Snake battle royale",
+    "cloak": false,
+    "status": "online"
+  },
+  {
+    "id": "arc-013",
     "title": "Vex 6",
     "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/vex-6.png",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/vex6/vex6.xml",
-    "category": "Games",
-    "cloak": true
+    "category": "Arcade",
+    "server": "Google-CDN",
+    "meta": "Hardcore stickman parkour",
+    "cloak": true,
+    "status": "online"
   },
   {
-    "title": "Mario 64",
-    "thumb": "https://upload.wikimedia.org/wikipedia/en/6/6a/Super_Mario_64_box_cover.jpg",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/super-mario-64/super-mario-64.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
+    "id": "arc-014",
     "title": "Doodle Jump",
     "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/doodle-jump.png",
     "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/doodle-jump/doodle-jump.xml",
-    "category": "Games",
-    "cloak": true
+    "category": "Arcade",
+    "server": "Google-CDN",
+    "meta": "Jump up high",
+    "cloak": true,
+    "status": "online"
   },
   {
+    "id": "ret-001",
+    "title": "Minecraft (Eagler)",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/minecraft.png",
+    "url": "https://eaglercraft.com/mc/1.8.8/",
+    "category": "Retro",
+    "server": "Eagler",
+    "meta": "Full Minecraft 1.8.8 in browser",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "ret-002",
+    "title": "Super Mario 64",
+    "thumb": "https://upload.wikimedia.org/wikipedia/en/6/6a/Super_Mario_64_box_cover.jpg",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/super-mario-64/super-mario-64.xml",
+    "category": "Retro",
+    "server": "Google-CDN",
+    "meta": "Classic N64 platformer",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "ret-003",
+    "title": "Pac-Man",
+    "thumb": "https://www.google.com/logos/2010/pacman10-hp.png",
+    "url": "https://www.google.com/logos/2010/pacman10-i.html",
+    "category": "Retro",
+    "server": "Google",
+    "meta": "The original arcade game",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "ret-004",
+    "title": "Tetris",
+    "thumb": "https://tetris.com/img/favicon.ico",
+    "url": "https://tetris.com/play-tetris",
+    "category": "Retro",
+    "server": "Official",
+    "meta": "Stack the blocks",
+    "cloak": false,
+    "status": "online"
+  },
+  {
+    "id": "ret-005",
+    "title": "Doom",
+    "thumb": "https://upload.wikimedia.org/wikipedia/en/5/57/Doom_cover_art.jpg",
+    "url": "https://dos.zone/player/?bundleUrl=https%3A%2F%2Fcdn.dos.zone%2Fcustom%2Fdos%2Fdoom.jsdos?anonymous=1",
+    "category": "Retro",
+    "server": "DOS-Zone",
+    "meta": "The grandfather of FPS",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "hor-001",
+    "title": "FNAF 1",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf1.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf/fnaf.xml",
+    "category": "Horror",
+    "server": "Google-CDN",
+    "meta": "Five Nights at Freddy's 1",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "hor-002",
+    "title": "FNAF 2",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf2.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf2/fnaf2.xml",
+    "category": "Horror",
+    "server": "Google-CDN",
+    "meta": "Five Nights at Freddy's 2",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "hor-003",
+    "title": "FNAF 3",
+    "thumb": "https://raw.githubusercontent.com/I-S-L-A-N-D-S/App-Icons/main/fnaf3.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/fnaf3/fnaf3.xml",
+    "category": "Horror",
+    "server": "Google-CDN",
+    "meta": "Five Nights at Freddy's 3",
+    "cloak": true,
+    "status": "online"
+  },
+  {
+    "id": "tool-001",
     "title": "ChatGPT Mirror",
     "thumb": "https://openai.com/favicon.ico",
     "url": "https://chat.shuttle.rip/",
     "category": "Tools",
-    "cloak": true
+    "server": "Shuttle",
+    "meta": "AI Assistant Unblocked",
+    "cloak": true,
+    "status": "online"
   },
   {
-    "title": "VS Code Online",
+    "id": "tool-002",
+    "title": "VS Code Web",
     "thumb": "https://vscode.dev/static/stable/favicon.ico",
     "url": "https://vscode.dev",
     "category": "Tools",
-    "cloak": false
+    "server": "Microsoft",
+    "meta": "Code editor in browser",
+    "cloak": false,
+    "status": "online"
   },
   {
-    "title": "Cloud Emulator",
+    "id": "tool-003",
+    "title": "Cloud GBA",
     "thumb": "https://raw.githubusercontent.com/TristanLeila/App-Icons/main/GBA.png",
     "url": "https://web.retrogames.cc/",
     "category": "Tools",
-    "cloak": true
+    "server": "RetroGames",
+    "meta": "Play GBA games online",
+    "cloak": true,
+    "status": "online"
   },
   {
-    "title": "Shell Shockers",
-    "thumb": "https://shellshock.io/favicon.ico",
-    "url": "https://shellshock.io/",
-    "category": "Games",
-    "cloak": false
+    "id": "tool-004",
+    "title": "Geforce Now",
+    "thumb": "https://www.nvidia.com/favicon.ico",
+    "url": "https://play.geforcenow.com",
+    "category": "Tools",
+    "server": "Nvidia",
+    "meta": "Cloud Gaming PC",
+    "cloak": false,
+    "status": "online"
   },
   {
-    "title": "Bloxd.io",
-    "thumb": "https://bloxd.io/favicon.ico",
-    "url": "https://bloxd.io/",
-    "category": "Games",
-    "cloak": false
+    "id": "extra-001",
+    "title": "Papa's Freezeria",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/6f542387192131.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/papas-freezeria/papas-freezeria.xml",
+    "category": "Flash",
+    "server": "Google-CDN",
+    "meta": "Serve ice cream",
+    "cloak": true,
+    "status": "online"
   },
   {
-    "title": "Agar.io",
-    "thumb": "https://agar.io/favicon.ico",
-    "url": "https://agar.io/",
-    "category": "Games",
-    "cloak": false
+    "id": "extra-002",
+    "title": "Papa's Pizzeria",
+    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/papas-pizzeria.png",
+    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/papas-pizzeria/papas-pizzeria.xml",
+    "category": "Flash",
+    "server": "Google-CDN",
+    "meta": "Bake pizzas",
+    "cloak": true,
+    "status": "online"
   },
   {
-    "title": "Slither.io",
-    "thumb": "https://slither.io/favicon.ico",
-    "url": "http://slither.io/",
-    "category": "Games",
-    "cloak": false
+    "id": "extra-003",
+    "title": "Wordle",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Wordle_196_example.svg",
+    "url": "https://www.nytimes.com/games/wordle/index.html",
+    "category": "Puzzle",
+    "server": "NYT",
+    "meta": "Guess the word",
+    "cloak": false,
+    "status": "online"
   },
   {
-    "title": "Powerline.io",
-    "thumb": "https://powerline.io/favicon.ico",
-    "url": "https://powerline.io/",
-    "category": "Games",
-    "cloak": false
-  },
-  {
-    "title": "Diep.io",
-    "thumb": "https://diep.io/favicon.ico",
-    "url": "https://diep.io/",
-    "category": "Games",
-    "cloak": false
-  },
-  {
-    "title": "Terraria (Mirror)",
-    "thumb": "https://terraria.org/favicon.ico",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/terraria/terraria.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Get On Top",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/get-on-top.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/get-on-top/get-on-top.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Basketball Stars",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/basketball-stars.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/basketball-stars/basketball-stars.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Tunnel Rush",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/tunnel-rush.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/tunnel-rush/tunnel-rush.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Jetpack Joyride",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/jetpack-joyride.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/jetpack-joyride/jetpack-joyride.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Cut The Rope",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/cut-the-rope.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/cut-the-rope/cut-the-rope.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Angry Birds",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/angry-birds.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/angry-birds/angry-birds.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Temple Run 2",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/temple-run-2.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/temple-run-2/temple-run-2.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Among Us Mirror",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/among-us.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/among-us/among-us.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "World's Hardest Game",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/worlds-hardest-game.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/whg/whg.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Tomb Runner",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/tomb-runner.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/tomb-runner/tomb-runner.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "Run 3",
-    "thumb": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/run-3.png",
-    "url": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1id/steele@master/run-3/run-3.xml",
-    "category": "Games",
-    "cloak": true
-  },
-  {
-    "title": "EvoWorld.io",
-    "thumb": "https://evoworld.io/img/favicon.ico",
-    "url": "https://evoworld.io/",
-    "category": "Games",
-    "cloak": false
-  },
-  {
-    "title": "ZombsRoyale.io",
-    "thumb": "https://zombsroyale.io/favicon.ico",
-    "url": "https://zombsroyale.io/",
-    "category": "Games",
-    "cloak": false
+    "id": "extra-004",
+    "title": "2048",
+    "thumb": "https://play2048.co/favicon.ico",
+    "url": "https://play2048.co/",
+    "category": "Puzzle",
+    "server": "Direct",
+    "meta": "Combine numbers",
+    "cloak": true,
+    "status": "online"
   }
 ]
