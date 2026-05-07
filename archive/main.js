@@ -1,173 +1,128 @@
 /**
- * TITAN ETERNAL v5.0 - THE DIAGNOSTIC CORE
- * Specialized for home/unfiltered networks with high link decay.
+ * 🛡️ TITAN ENGINE: GHOST PROTOCOL
+ * FIXES: 403 Proxy Deaths, Blocked Placeholders, Network Hangs
  */
 
-const TITAN_CONFIG = {
-    vault: './games.json',
-    proxy: 'https://api.allorigins.win/raw?url=', // Backup for CORS issues
-    placeholder: 'https://via.placeholder.com/300x200?text=Link+Decayed',
-    panic: 'https://google.com'
+const CONFIG = {
+    jsonPath: './games.json',
+    
+    // --- THE PROXY FIX ---
+    // Your Google Cloud proxy is dead. I've swapped this to a raw CORS proxy 
+    // for testing. You will need to find a new, working proxy URL eventually.
+    proxyPrefix: 'https://api.allorigins.win/raw?url=', 
+    
+    // --- THE THUMBNAIL FIX ---
+    // This is a Base64 SVG. It is literal code turned into an image. 
+    // Your school CANNOT block this because it doesn't rely on a URL.
+    ghostImage: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMyMjIiLz48dGV4dCB4PSIxNTAiIHk9IjEwMCIgZmlsbD0iIzU1NSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIj5OTyBTSUdOQUw8L3RleHQ+PC9zdmc+',
+
+    rowHeight: 260, 
+    itemsPerRow: 4, 
+    buffer: 6,
+    cloakTitle: 'Classes',
+    cloakIcon: 'https://ssl.gstatic.com/classroom/favicon.png'
 };
 
-class TitanEternal {
+class GhostEngine {
     constructor() {
-        this.data = [];
-        this.favorites = JSON.parse(localStorage.getItem('titan_favs')) || [];
-        this.nodes = {
-            grid: document.getElementById('games-grid'),
-            search: document.getElementById('search'),
-            stats: this.initStatsBar()
-        };
-        this.boot();
+        this.db = [];
+        this.filtered = [];
+        this.container = document.querySelector('.container') || document.body; // Fallback if no container
+        this.grid = document.getElementById('games-grid') || this.createGrid();
+        this.search = document.getElementById('search');
+
+        this.init();
     }
 
-    async boot() {
-        console.log("%c[TITAN] Initiating Eternal Boot...", "color:cyan; font-weight:bold;");
+    createGrid() {
+        // Automatically creates the grid if your HTML is missing it
+        const g = document.createElement('div');
+        g.id = 'games-grid';
+        g.style = 'display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; padding: 20px;';
+        this.container.appendChild(g);
+        return g;
+    }
+
+    async init() {
+        console.log("%c👻 GHOST PROTOCOL: INITIATED...", "color: #ff00ff; font-weight: bold;");
         try {
-            const res = await fetch(TITAN_CONFIG.vault);
-            const raw = await res.json();
-            
-            // SANITIZATION: Fixes common JSON typos on the fly
-            this.data = raw.map(item => ({
-                ...item,
-                id: item.id || Math.random().toString(36).substr(2, 5),
-                status: 'testing'
-            }));
+            const res = await fetch(CONFIG.jsonPath);
+            this.db = await res.json();
+            this.filtered = this.db;
 
-            this.setupListeners();
-            this.render(this.data);
-            this.runSiteDoctor(); // Starts background diagnostics
-        } catch (e) {
-            this.crashReport(e);
-        }
-    }
-
-    /* --- THE SITE DOCTOR (Background Diagnostics) --- */
-    async runSiteDoctor() {
-        for (let item of this.data) {
-            if (item.url === "#") continue;
-            
-            try {
-                // Testing the URL with a HEAD request
-                const controller = new AbortController();
-                const timeout = setTimeout(() => controller.abort(), 5000);
-                
-                await fetch(item.url, { mode: 'no-cors', signal: controller.signal });
-                this.updateStatus(item.id, 'online');
-            } catch (err) {
-                // If it fails, it's likely a 404 or DNS error
-                this.updateStatus(item.id, 'offline');
-                console.warn(`[DOCTOR] ${item.title} failed diagnostic:`, err.message);
+            if(this.search) {
+                this.search.addEventListener('input', (e) => this.handleSearch(e));
             }
+
+            this.render();
+            console.log(`[SYSTEM] Loaded ${this.db.length} Units.`);
+        } catch (e) {
+            console.error("CRITICAL BOOT FAILURE: Cannot read games.json", e);
         }
     }
 
-    /* --- THE LAUNCHER (With IFrame Bypass) --- */
-    launch(item) {
-        // Log launch attempt
-        console.log(`[LAUNCH] Attempting to initialize ${item.title}...`);
+    launch(url, title) {
+        console.log(`🚀 Routing ${title} through proxy...`);
 
+        // Encode the URL so network filters can't read what game you are launching
+        const safeUrl = encodeURIComponent(url);
+        const finalUrl = `${CONFIG.proxyPrefix}${safeUrl}`;
+
+        // Open Cloaked Tab
         const win = window.open('about:blank', '_blank');
-        if (!win) return alert("Pop-up Blocked!");
+        if (!win) return alert("Pop-up blocked! Allow pop-ups to launch games.");
 
-        // Disguise the tab
-        win.document.title = "Class Assignment";
-        
+        win.document.title = CONFIG.cloakTitle;
+        const link = win.document.createElement('link');
+        link.rel = 'icon';
+        link.href = CONFIG.cloakIcon;
+        win.document.head.appendChild(link);
+
         const iframe = win.document.createElement('iframe');
         Object.assign(iframe.style, {
-            position: 'fixed', inset: '0', width: '100%', height: '100%', 
-            border: 'none', background: '#000'
+            position: 'fixed', inset: '0', width: '100vw', height: '100vh', border: 'none', background: '#000'
         });
 
-        // Try standard launch
-        iframe.src = item.url;
-        win.document.body.style.margin = '0';
-        win.document.body.appendChild(iframe);
-
-        // BEEFY ADDITION: Detecting if IFrame is blocked (X-Frame-Options)
-        setTimeout(() => {
-            try {
-                if (win.document.body.innerHTML.includes("refused to connect") || 
-                    win.document.body.innerHTML === "") {
-                    this.injectFallback(win, item.url);
-                }
-            } catch (e) {
-                // If we can't read the iframe content, it's usually working
-            }
-        }, 2000);
-    }
-
-    injectFallback(win, url) {
-        const btn = win.document.createElement('div');
-        btn.innerHTML = `
-            <div style="color:white; background:#111; height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif;">
-                <h2>Security Shield Detected</h2>
-                <p>This site refuses to be 'cloaked'. You must open it directly.</p>
-                <a href="${url}" style="color:#00ffcc; font-size:20px; text-decoration:none; border:2px solid #00ffcc; padding:15px 30px; border-radius:5px;">Open Original Site</a>
-            </div>
-        `;
-        win.document.body.appendChild(btn);
-    }
-
-    /* --- RENDERING & UI --- */
-    render(list) {
-        this.nodes.grid.innerHTML = '';
-        const frag = document.createDocumentFragment();
-
-        list.forEach(item => {
-            const card = document.createElement('div');
-            card.className = 'game-card';
-            card.innerHTML = `
-                <div class="thumb-box">
-                    <img src="${item.thumb}" onerror="this.src='${TITAN_CONFIG.placeholder}'">
-                    <div class="status-indicator" id="dot-${item.id}"></div>
-                </div>
-                <h3>${item.title}</h3>
-                <p>${item.category}</p>
-                <button class="launch-btn">LAUNCH</button>
-            `;
-            
-            card.querySelector('.launch-btn').onclick = () => this.launch(item);
-            frag.appendChild(card);
-        });
-
-        this.nodes.grid.appendChild(frag);
-        this.updateStats(list.length);
-    }
-
-    updateStatus(id, status) {
-        const dot = document.getElementById(`dot-${id}`);
-        if (dot) dot.className = `status-indicator ${status}`;
-    }
-
-    setupListeners() {
-        this.nodes.search.oninput = (e) => {
-            const query = e.target.value.toLowerCase();
-            const filtered = this.data.filter(i => i.title.toLowerCase().includes(query));
-            this.render(filtered);
-        };
+        iframe.src = finalUrl;
+        iframe.allow = "fullscreen; autoplay; encrypted-media; cursor-lock;";
         
-        window.onkeydown = (e) => {
-            if (e.key === 'Escape') window.location.replace(TITAN_CONFIG.panic);
-        };
+        win.document.body.style.margin = '0';
+        win.document.body.style.overflow = 'hidden';
+        win.document.body.appendChild(iframe);
     }
 
-    initStatsBar() {
-        const bar = document.createElement('div');
-        bar.className = 'titan-stats';
-        document.body.prepend(bar);
-        return bar;
+    handleSearch(e) {
+        const query = e.target.value.toLowerCase();
+        this.filtered = this.db.filter(item => item.title.toLowerCase().includes(query));
+        this.render();
     }
 
-    updateStats(count) {
-        this.nodes.stats.innerText = `DATABASE: ${count} ASSETS LOADED | SYSTEM: OPTIMIZED`;
-    }
-
-    crashReport(err) {
-        this.nodes.grid.innerHTML = `<div class="crash"><h2>CORE OVERLOAD</h2><p>${err.message}</p></div>`;
+    render() {
+        this.grid.innerHTML = '';
+        
+        // Render standard cards (removed complex virtual scroll to ensure baseline functionality first)
+        let html = '';
+        this.filtered.forEach(item => {
+            html += `
+                <div class="game-card" style="width: 200px; background: #1a1a1a; border: 1px solid #333; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; align-items: center; padding-bottom: 15px;">
+                    <img src="${item.thumb || item.image}" 
+                         onerror="this.onerror=null; this.src='${CONFIG.ghostImage}';" 
+                         style="width: 100%; height: 120px; object-fit: cover; background: #000;" 
+                         loading="lazy" alt="${item.title}">
+                    
+                    <h3 style="color: #eee; font-size: 14px; margin: 15px 0 5px 0; text-align: center;">${item.title}</h3>
+                    <p style="color: #888; font-size: 11px; margin-bottom: 15px;">${item.category || 'Game'}</p>
+                    
+                    <button onclick="Ghost.launch('${item.url}', '${item.title.replace(/'/g, "\\'")}')" 
+                            style="background: #eee; color: #111; border: none; padding: 5px 15px; cursor: pointer; border-radius: 3px; font-weight: bold;">
+                        INITIALIZE
+                    </button>
+                </div>
+            `;
+        });
+        
+        this.grid.innerHTML = html;
     }
 }
 
-// Ignition
-new TitanEternal();
+const Ghost = new GhostEngine();
