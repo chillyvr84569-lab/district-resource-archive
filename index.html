@@ -3,22 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Developer Portfolio</title>
+    <title>System Archive</title>
     <style>
-        :root { --p: #d53af5; --bg: #0a0a0c; }
-        body { background: var(--bg); color: #eee; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
-        .card { border: 1px solid #333; padding: 40px; border-radius: 20px; background: #16161a; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 400px; }
-        h1 { color: var(--p); margin: 0; font-size: 2rem; }
-        p { color: #94a1b2; margin: 20px 0; line-height: 1.5; }
-        .btn { display: inline-block; padding: 12px 24px; background: var(--p); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; cursor: pointer; }
-        .btn:hover { transform: translateY(-2px); background: #b02ecb; }
+        :root {
+            --vault-gold: #ffcc00;
+            --vault-bg: #050505;
+            --vault-panel: #1a1a1a;
+            --vault-border: #333;
+        }
+
+        body {
+            margin: 0;
+            background: var(--vault-bg);
+            color: var(--vault-gold);
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+        }
+
+        /* TOP STATUS BAR */
+        #status-bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: #111;
+            border-bottom: 2px solid var(--vault-gold);
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* NAVIGATION TABS */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #000;
+            padding: 10px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: 1px solid var(--vault-border);
+            color: #666;
+            padding: 10px 25px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .tab-btn.active {
+            border-color: var(--vault-gold);
+            color: var(--vault-gold);
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+        }
+
+        /* CONTENT AREAS */
+        .tab-content { display: none; height: calc(100vh - 120px); overflow-y: auto; }
+        .tab-content.active { display: block; }
+
+        /* THE TERMINAL (PROXY SEARCH) */
+        #terminal-tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .vault-logo {
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px var(--vault-gold);
+        }
+
+        .terminal-input {
+            width: 80%;
+            max-width: 600px;
+            background: #000;
+            border: 2px solid var(--vault-gold);
+            color: var(--vault-gold);
+            padding: 20px;
+            font-size: 20px;
+            font-family: inherit;
+            outline: none;
+            box-shadow: inset 0 0 10px rgba(255, 204, 0, 0.2);
+        }
+
+        /* THE GOLD VAULT (GAMES) */
+        #games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .gold-card {
+            background: var(--vault-panel);
+            border: 1px solid var(--vault-gold);
+            padding: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .gold-card:hover {
+            transform: scale(1.05);
+            background: #222;
+        }
+
+        .gold-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--vault-gold);
+        }
+
+        .btn-init {
+            background: var(--vault-gold);
+            color: #000;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Student Portfolio</h1>
-        <p>I am a student developer learning HTML, CSS, and JavaScript. This site hosts my web development projects and experiments.</p>
-        <a href="archive/index.html" class="btn">View My Projects</a>
+
+    <div id="status-bar">
+        <div id="reactor-clock">REACTOR TIME: 00:00:00</div>
+        <div>VAULT-OS V.7.0</div>
+        <div id="battery-status">POWER CELL: 100%</div>
     </div>
+
+    <nav>
+        <button class="tab-btn active" onclick="switchTab('terminal-tab', this)">THE TERMINAL</button>
+        <button class="tab-btn" onclick="switchTab('games-tab', this)">THE VAULT</button>
+    </nav>
+
+    <div id="terminal-tab" class="tab-content active">
+        <div class="vault-logo">[ GOLD ]</div>
+        <p>ENTER ENCRYPTED DESTINATION</p>
+        <input type="text" id="proxy-input" class="terminal-input" placeholder=">_ SEARCH OR URL" autocomplete="off">
+    </div>
+
+    <div id="games-tab" class="tab-content">
+        <div id="games-grid"></div>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
