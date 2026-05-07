@@ -3,130 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Archive</title>
+    <title>Vault-OS V.7.0</title>
     <style>
-        :root {
-            --vault-gold: #ffcc00;
-            --vault-bg: #050505;
-            --vault-panel: #1a1a1a;
-            --vault-border: #333;
-        }
+        /* --- VAULT VISUALS --- */
+        :root { --gold: #ffcc00; --bg: #050505; --panel: #111; }
+        body { margin: 0; background: var(--bg); color: var(--gold); font-family: 'Courier New', monospace; overflow: hidden; }
+        
+        #status-bar { display: flex; justify-content: space-between; padding: 10px 20px; border-bottom: 2px solid var(--gold); background: #000; font-size: 12px; }
+        
+        nav { display: flex; justify-content: center; padding: 15px; gap: 10px; background: #000; }
+        .tab-btn { background: none; border: 1px solid #333; color: #555; padding: 8px 20px; cursor: pointer; font-family: inherit; transition: 0.3s; }
+        .tab-btn.active { color: var(--gold); border-color: var(--gold); box-shadow: 0 0 10px rgba(255,204,0,0.2); }
 
-        body {
-            margin: 0;
-            background: var(--vault-bg);
-            color: var(--vault-gold);
-            font-family: 'Courier New', Courier, monospace;
-            overflow: hidden;
-        }
+        .tab-content { display: none; height: calc(100vh - 120px); overflow-y: auto; text-align: center; }
+        .tab-content.active { display: flex; flex-direction: column; align-items: center; justify-content: center; }
 
-        /* TOP STATUS BAR */
-        #status-bar {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 20px;
-            background: #111;
-            border-bottom: 2px solid var(--vault-gold);
-            font-size: 14px;
-            text-transform: uppercase;
-        }
+        /* TERMINAL STYLE */
+        .vault-logo { font-size: 60px; font-weight: bold; margin: 20px; text-shadow: 0 0 20px var(--gold); }
+        .terminal-input { width: 80%; max-width: 600px; background: #000; border: 2px solid var(--gold); color: var(--gold); padding: 20px; font-size: 20px; font-family: inherit; outline: none; text-align: center; }
 
-        /* NAVIGATION TABS */
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #000;
-            padding: 10px;
-        }
-
-        .tab-btn {
-            background: none;
-            border: 1px solid var(--vault-border);
-            color: #666;
-            padding: 10px 25px;
-            margin: 0 10px;
-            cursor: pointer;
-            font-family: inherit;
-            transition: 0.3s;
-        }
-
-        .tab-btn.active {
-            border-color: var(--vault-gold);
-            color: var(--vault-gold);
-            box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
-        }
-
-        /* CONTENT AREAS */
-        .tab-content { display: none; height: calc(100vh - 120px); overflow-y: auto; }
-        .tab-content.active { display: block; }
-
-        /* THE TERMINAL (PROXY SEARCH) */
-        #terminal-tab {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .vault-logo {
-            font-size: 60px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px var(--vault-gold);
-        }
-
-        .terminal-input {
-            width: 80%;
-            max-width: 600px;
-            background: #000;
-            border: 2px solid var(--vault-gold);
-            color: var(--vault-gold);
-            padding: 20px;
-            font-size: 20px;
-            font-family: inherit;
-            outline: none;
-            box-shadow: inset 0 0 10px rgba(255, 204, 0, 0.2);
-        }
-
-        /* THE GOLD VAULT (GAMES) */
-        #games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 40px;
-        }
-
-        .gold-card {
-            background: var(--vault-panel);
-            border: 1px solid var(--vault-gold);
-            padding: 10px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .gold-card:hover {
-            transform: scale(1.05);
-            background: #222;
-        }
-
-        .gold-card img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--vault-gold);
-        }
-
-        .btn-init {
-            background: var(--vault-gold);
-            color: #000;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+        /* GRID STYLE */
+        #games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding: 40px; width: 90%; }
+        .gold-card { background: var(--panel); border: 1px solid var(--gold); padding: 15px; transition: 0.3s; }
+        .gold-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255,204,0,0.2); }
+        .gold-card img { width: 100%; height: 120px; object-fit: cover; border-bottom: 1px solid var(--gold); margin-bottom: 10px; }
+        .access-btn { background: var(--gold); color: #000; border: none; width: 100%; padding: 10px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -134,24 +35,99 @@
     <div id="status-bar">
         <div id="reactor-clock">REACTOR TIME: 00:00:00</div>
         <div>VAULT-OS V.7.0</div>
-        <div id="battery-status">POWER CELL: 100%</div>
+        <div id="battery-status">POWER CELL: --%</div>
     </div>
 
     <nav>
-        <button class="tab-btn active" onclick="switchTab('terminal-tab', this)">THE TERMINAL</button>
-        <button class="tab-btn" onclick="switchTab('games-tab', this)">THE VAULT</button>
+        <button id="btn-term" class="tab-btn active" onclick="switchTab('terminal')">THE TERMINAL</button>
+        <button id="btn-vault" class="tab-btn" onclick="switchTab('vault')">THE VAULT</button>
     </nav>
 
-    <div id="terminal-tab" class="tab-content active">
+    <div id="tab-terminal" class="tab-content active">
         <div class="vault-logo">[ GOLD ]</div>
         <p>ENTER ENCRYPTED DESTINATION</p>
         <input type="text" id="proxy-input" class="terminal-input" placeholder=">_ SEARCH OR URL" autocomplete="off">
     </div>
 
-    <div id="games-tab" class="tab-content">
+    <div id="tab-vault" class="tab-content">
         <div id="games-grid"></div>
     </div>
 
-    <script src="main.js"></script>
+    <script>
+        // --- THE VAULT BRAIN ---
+        const CONFIG = {
+            jsonPath: './games.json',
+            proxyPrefix: 'https://api.allorigins.win/raw?url=',
+            ghost: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMTAxMDEwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZpbGw9IiNmZmNjMDAiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHN0eWxlPSJkb21pbmFudC1iYXNlbGluZTptaWRkbGUiPltOTyBTSUdOQUxdPC90ZXh0Pjwvc3ZnPg=='
+        };
+
+        // 1. REACTOR & POWER
+        function updateStatus() {
+            const now = new Date();
+            document.getElementById('reactor-clock').innerText = `REACTOR TIME: ${now.toTimeString().split(' ')[0]}`;
+            if (navigator.getBattery) {
+                navigator.getBattery().then(bat => {
+                    document.getElementById('battery-status').innerText = `POWER CELL: ${Math.floor(bat.level * 100)}%`;
+                });
+            }
+        }
+        setInterval(updateStatus, 1000);
+
+        // 2. TAB SWITCHER
+        function switchTab(type) {
+            console.log("Switching to:", type);
+            document.getElementById('tab-terminal').classList.remove('active');
+            document.getElementById('tab-vault').classList.remove('active');
+            document.getElementById('btn-term').classList.remove('active');
+            document.getElementById('btn-vault').classList.remove('active');
+
+            if (type === 'terminal') {
+                document.getElementById('tab-terminal').classList.add('active');
+                document.getElementById('btn-term').classList.add('active');
+            } else {
+                document.getElementById('tab-vault').classList.add('active');
+                document.getElementById('btn-vault').classList.add('active');
+                loadVault(); // Refresh games when opening
+            }
+        }
+
+        // 3. SEARCH ENGINE (ENTER KEY)
+        document.getElementById('proxy-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                let val = e.target.value.trim();
+                if (!val) return;
+                let target = val.includes('.') ? (val.startsWith('http') ? val : `https://${val}`) : `https://www.google.com/search?q=${encodeURIComponent(val)}`;
+                launch(target);
+            }
+        });
+
+        // 4. GAME ENGINE
+        async function loadVault() {
+            const grid = document.getElementById('games-grid');
+            try {
+                const res = await fetch(CONFIG.jsonPath);
+                const data = await res.json();
+                grid.innerHTML = data.map(item => `
+                    <div class="gold-card">
+                        <img src="${item.thumb}" onerror="this.src='${CONFIG.ghost}'">
+                        <div style="margin-bottom:10px;">${item.title}</div>
+                        <button class="access-btn" onclick="launch('${item.url}')">ACCESS</button>
+                    </div>
+                `).join('');
+            } catch (err) {
+                grid.innerHTML = `<p>ERROR: UNABLE TO ACCESS GAMES.JSON ARCHIVE</p>`;
+            }
+        }
+
+        function launch(url) {
+            const win = window.open('about:blank', '_blank');
+            const iframe = win.document.createElement('iframe');
+            iframe.style = "position:fixed;inset:0;width:100vw;height:100vh;border:none;background:#000;";
+            iframe.src = CONFIG.proxyPrefix + encodeURIComponent(url);
+            win.document.body.appendChild(iframe);
+        }
+
+        updateStatus();
+    </script>
 </body>
 </html>
