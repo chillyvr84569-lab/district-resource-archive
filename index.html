@@ -28,7 +28,7 @@
         .tab-content { display: none; height: calc(100vh - 130px); overflow-y: auto; text-align: center; width: 100%; position: relative; z-index: 11; }
         .tab-content.active { display: block; }
 
-        /* TAB 1: TERMINAL (PROXY) */
+        /* TAB 1: GHOST_LINK (PROXY) */
         .glitch { font-size: 60px; font-weight: bold; margin-top: 15vh; text-shadow: 3px 3px var(--gold); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
         .terminal-input { 
@@ -64,23 +64,23 @@
     <div id="status-bar">
         <div id="live-clock">00:00:00 AM</div>
         <div style="letter-spacing: 3px; color: #fff;">VAULT-OS // ENGINEERED BY DREWSKI</div>
-        <div id="batt-info">PWR_BANK: <span id="batt-icon">100%</span></div>
+        <div id="batt-info">PWR_RESERVE: <span id="batt-icon">100%</span></div>
     </div>
 
     <nav>
-        <button id="btn-term" class="tab-btn active" onclick="switchTab('terminal')">TERMINAL</button>
+        <button id="btn-term" class="tab-btn active" onclick="switchTab('terminal')">GHOST_LINK</button>
         <button id="btn-vault" class="tab-btn" onclick="switchTab('vault')">THE VAULT</button>
     </nav>
 
     <div id="tab-terminal" class="tab-content active">
-        <div class="glitch">[ SYSTEM_BYPASS ]</div>
-        <input type="text" id="proxy-input" class="terminal-input" placeholder="INPUT TARGET URL OR QUERY..." autocomplete="off" autofocus>
-        <div class="sys-credit">SYSTEM ARCHITECT: DREWSKI // RTX-3060_OPTIMIZED</div>
+        <div class="glitch">[ GHOST_LINK ]</div>
+        <input type="text" id="proxy-input" class="terminal-input" placeholder="ACCESS EXTERNAL SECURE LINK..." autocomplete="off" autofocus>
+        <div class="sys-credit">VERSION 1.1.0 // PUBLIC_ACCESS_GRANTED</div>
     </div>
 
     <div id="tab-vault" class="tab-content">
         <div class="vault-controls">
-            <input type="text" id="vault-search" placeholder="SEARCHING 10,000+ SECURE FILES..." oninput="filterVault()">
+            <input type="text" id="vault-search" placeholder="SEARCHING ARCHIVE DATASTREAMS..." oninput="filterVault()">
         </div>
         <div id="vault-grid">
             <p>SYNCING DATA STREAM...</p>
@@ -91,7 +91,6 @@
         let allGames = [];
         const vaultDoor = `<svg viewBox="0 0 24 24"><path d="M12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5zm10.5-3.5c0-.33-.02-.66-.06-.98l2.03-1.58-1.93-3.34-2.4.97c-.5-.38-1.04-.7-1.63-.95l-.36-2.54h-3.86l-.36 2.54c-.59.24-1.13.57-1.63.95l-2.4-.97-1.93 3.34 2.03 1.58c-.04.32-.06.65-.06.98s.02.66.06.98l-2.03 1.58 1.93 3.34 2.4-.97c.5.38 1.04.7 1.63.95l.36 2.54h3.86l.36-2.54c.59-.24 1.13-.57 1.63-.95l2.4.97 1.93-3.34-2.03-1.58c.04-.32.06-.65.06-.98z"/></svg>`;
 
-        // LIVE UPDATES
         function updateStatus() {
             document.getElementById('live-clock').innerText = new Date().toLocaleTimeString();
         }
@@ -105,7 +104,6 @@
             });
         }
 
-        // CLOAKING ENGINE (The Proxy Launch)
         function cloak(url) {
             const win = window.open('about:blank', '_blank');
             if (!win) return alert("VAULT ACCESS DENIED: ENABLE POPUPS");
@@ -119,7 +117,6 @@
             win.document.body.appendChild(iframe);
         }
 
-        // TAB NAVIGATION
         function switchTab(type) {
             document.querySelectorAll('.tab-content, .tab-btn').forEach(el => el.classList.remove('active'));
             document.getElementById(`tab-${type}`).classList.add('active');
@@ -127,7 +124,6 @@
             if (type === 'vault' && allGames.length === 0) loadVault();
         }
 
-        // TERMINAL INPUT (PROXY SEARCH)
         document.getElementById('proxy-input').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 const val = e.target.value.trim();
@@ -137,7 +133,6 @@
             }
         });
 
-        // DATA LOADING
         async function loadVault() {
             const grid = document.getElementById('vault-grid');
             const files = ['games (1).json', 'games.json'];
@@ -147,11 +142,11 @@
                     const res = await fetch(f + '?nocache=' + Date.now());
                     if (!res.ok) continue;
                     allGames = await res.json();
-                    renderGames(allGames.slice(0, 500)); // Renders 500 at once for your RTX 3060
+                    renderGames(allGames.slice(0, 500));
                     return;
-                } catch (e) { console.log("Stream offline, switching source..."); }
+                } catch (e) { console.log("Stream offline..."); }
             }
-            grid.innerHTML = `<p style="color:red; padding:50px;">CRITICAL ERROR: games (1).json DATASTREAM OFFLINE</p>`;
+            grid.innerHTML = `<p style="color:red; padding:50px;">CRITICAL ERROR: DATASTREAM OFFLINE</p>`;
         }
 
         function renderGames(data) {
