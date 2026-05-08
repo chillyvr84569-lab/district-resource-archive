@@ -1,56 +1,62 @@
 [
   {
-    "title": "Minecraft 1.8.8 (Eaglercraft)",
+    "title": "Minecraft 1.8.8",
     "url": "https://eaglercraft.com/mc/1.8.8/",
-    "thumb": "https://raw.githubusercontent.com/Dex7er/Eaglercraft/main/logo.png",
-    "category": "Sandbox"
+    "thumb": "https://raw.githubusercontent.com/Dex7er/Eaglercraft/main/logo.png"
   },
   {
-    "title": "Slope",
-    "url": "https://kdata1.com/2020/05/slope/",
-    "thumb": "https://play-lh.googleusercontent.com/u772Y6v9L_N66C7UvL4_N9-U1bXF9_b5yG_v_N",
-    "category": "Action"
+    "title": "Smash Karts",
+    "url": "https://smashkarts.io/",
+    "thumb": "https://smashkarts.io/images/smashkarts-logo.png"
   },
   {
-    "title": "1v1.LOL",
-    "url": "https://1v1.lol/",
-    "thumb": "https://play-lh.googleusercontent.com/6S3Xv8B_T6fS0V5f4jF_V7W9",
-    "category": "FPS"
+    "title": "Shell Shockers",
+    "url": "https://shellshock.io/",
+    "thumb": "https://shellshock.io/img/logo.png"
   },
   {
     "title": "Retro Bowl",
     "url": "https://game.retrobowl.io/",
-    "thumb": "https://play-lh.googleusercontent.com/3p8_9L5Z_Z_G_V_X_Z_G",
-    "category": "Sports"
+    "thumb": "https://raw.githubusercontent.com/newstarcames/Retro-Bowl/main/icon.png"
+  },
+  {
+    "title": "1v1.LOL",
+    "url": "https://1v1.lol/",
+    "thumb": "https://1v1.lol/assets/img/logo.png"
+  },
+  {
+    "title": "Moto X3M",
+    "url": "https://mathplay.github.io/moto-x3m/",
+    "thumb": "https://play-lh.googleusercontent.com/Owt-5-xS-E7R8x9yD4A4S-k6Yg3A5v6xZ_7Q8V5aQ5q4b-N_XQ5n5H5g5X5x5z5v5c5"
   },
   {
     "title": "BitLife",
     "url": "https://bitlifeonline.com/game/",
-    "thumb": "https://play-lh.googleusercontent.com/8_X_Z_G_V_X_Z_G_V_X",
-    "category": "Simulation"
+    "thumb": "https://bitlifeonline.com/logo.png"
+  },
+  {
+    "title": "Drift Boss",
+    "url": "https://mathplay.github.io/drift-boss/",
+    "thumb": "https://play-lh.googleusercontent.com/9n_8m8m5j9x5V9H8k4L7M5g3n4y7j6s8_8Y9a9V6d3f2c5j8k4L7M5g3n4y7j6s8"
+  },
+  {
+    "title": "Geometry Dash",
+    "url": "https://geodash.github.io/",
+    "thumb": "https://upload.wikimedia.org/wikipedia/en/3/35/Geometry_Dash_Logo.PNG"
+  },
+  {
+    "title": "FNAF Web",
+    "url": "https://fnaf-web.github.io/",
+    "thumb": "https://upload.wikimedia.org/wikipedia/en/e/e0/Five_Nights_at_Freddy%27s_logo.png"
+  },
+  {
+    "title": "Slope",
+    "url": "https://kdata1.com/2020/05/slope/",
+    "thumb": "https://slopegame.io/slope-game.png"
   },
   {
     "title": "Cookie Clicker",
     "url": "https://orteil.dashnet.org/cookieclicker/",
-    "thumb": "https://orteil.dashnet.org/cookieclicker/img/shadedBorders.png",
-    "category": "Idle"
-  },
-  {
-    "title": "Friday Night Funkin'",
-    "url": "https://ninja-muffin24.itch.io/funkin",
-    "thumb": "https://img.itch.zone/aW1nLzQ0ODU1MjgucG5n/315x250%23c/8pYmXj.png",
-    "category": "Music"
-  },
-  {
-    "title": "Tunnel Rush",
-    "url": "https://poki.com/en/g/tunnel-rush",
-    "thumb": "https://img.poki.com/dg/tunnel-rush-2.png",
-    "category": "Action"
-  },
-  {
-    "title": "Subway Surfers",
-    "url": "https://poki.com/en/g/subway-surfers",
-    "thumb": "https://img.poki.com/dg/subway-surfers.png",
-    "category": "Arcade"
+    "thumb": "https://orteil.dashnet.org/cookieclicker/img/shadedBorders.png"
   }
 ]
