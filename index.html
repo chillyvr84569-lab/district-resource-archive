@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vault-OS V.7.3</title>
+    <title>Vault-OS V.7.4</title>
     <style>
         :root { --gold: #ffcc00; --bg: #0d0d0d; }
         body { margin: 0; background: var(--bg); color: var(--gold); font-family: 'Courier New', monospace; overflow: hidden; text-transform: uppercase; }
@@ -42,7 +42,7 @@
 
     <div id="status-bar">
         <div id="reactor-clock">REACTOR: 00:00:00</div>
-        <div>VAULT-OS V.7.3 [GEAR UPDATE]</div>
+        <div>VAULT-OS V.7.4 [STEALTH UPDATE]</div>
         <div id="battery-status">CELL: --%</div>
     </div>
 
@@ -96,20 +96,45 @@
             }
         }
 
-        // 3. PROXY LAUNCHER
+        // 3. THE CLOAKER (ABOUT:BLANK BYPASS)
+        function cloak(targetUrl) {
+            let win = window.open('about:blank', '_blank');
+            if (!win) {
+                alert("POP-UP BLOCKED! Allow pop-ups for this site to launch the Vault.");
+                return;
+            }
+            // Create a totally blank, un-trackable page
+            win.document.body.style.margin = "0";
+            win.document.body.style.height = "100vh";
+            win.document.body.style.backgroundColor = "#000";
+            
+            // Embed the target site inside it
+            let iframe = win.document.createElement('iframe');
+            iframe.style.border = "none";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.margin = "0";
+            iframe.src = targetUrl;
+            
+            win.document.body.appendChild(iframe);
+        }
+
+        // 4. TERMINAL PROXY LAUNCHER
         document.getElementById('proxy-input').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 let val = e.target.value.trim();
                 if (!val) return;
-                let target = val.includes('.') ? (val.startsWith('http') ? val : `https://${val}`) : `https://www.google.com/search?q=${encodeURIComponent(val)}`;
-                window.open('https://api.allorigins.win/raw?url=' + encodeURIComponent(target), '_blank');
+                let target = val.includes('.') ? (val.startsWith('http') ? val : `https://${val}`) : `https://www.google.com/search?q=${encodeURIComponent(val)}&igu=1`;
+                
+                // Uses the Cloaker + AllOrigins proxy. 
+                cloak('https://api.allorigins.win/raw?url=' + encodeURIComponent(target));
             }
         });
 
-        // 4. GAME LOADER (FOLDER BLIND)
+        // 5. GAME LOADER
         async function loadVault() {
             const grid = document.getElementById('vault-grid');
-            const paths = ['./games.json', './archive/games.json', '../games.json']; // Checks EVERYWHERE
+            const paths = ['./games.json', './archive/games.json', '../games.json']; 
             
             for (let path of paths) {
                 try {
@@ -120,10 +145,10 @@
                             <div class="gold-card">
                                 <img src="${item.thumb}" style="width:100%; height: 120px; object-fit: cover; border-bottom: 1px solid var(--gold); margin-bottom:10px;" onerror="this.src='https://placehold.co/200x120?text=NO+SIGNAL'">
                                 <div>${item.title}</div>
-                                <button class="init-btn" onclick="window.open('${item.url}')">INITIALIZE</button>
+                                <button class="init-btn" onclick="cloak('${item.url}')">INITIALIZE</button>
                             </div>
                         `).join('');
-                        return; // Stop if we find it!
+                        return; 
                     }
                 } catch (err) {
                     console.log(`Failed to find json at ${path}`);
