@@ -3,57 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vault-OS V.7.7</title>
+    <title>Vault-OS V.7.9 [STABLE]</title>
     <style>
-        :root { --gold: #ffcc00; --bg: #0d0d0d; }
+        :root { --gold: #ffcc00; --bg: #0d0d0d; --surface: #1a1a1a; }
         body { margin: 0; background: var(--bg); color: var(--gold); font-family: 'Courier New', monospace; overflow: hidden; text-transform: uppercase; }
         
-        /* CRT SCANLINES & VIGNETTE */
+        /* CRT SCANLINES */
         body::before {
             content: " "; display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
-                        radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 100%);
-            z-index: 10; background-size: 100% 4px, 100% 100%; pointer-events: none;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), 
+                        radial-gradient(circle, rgba(0,0,0,0) 50%, rgba(0,0,0,0.7) 100%);
+            z-index: 100; background-size: 100% 4px, 100% 100%; pointer-events: none;
         }
 
         #status-bar { display: flex; justify-content: space-between; padding: 10px 20px; border-bottom: 2px solid var(--gold); background: #000; font-size: 14px; position: relative; z-index: 11;}
         nav { display: flex; justify-content: center; padding: 10px; background: #000; border-bottom: 1px solid #333; position: relative; z-index: 11;}
         
         .tab-btn { background: none; border: 1px solid var(--gold); color: #886b00; padding: 10px 30px; cursor: pointer; font-family: inherit; margin: 0 5px; transition: 0.3s; }
-        .tab-btn.active { color: var(--gold); box-shadow: 0 0 20px var(--gold); background: rgba(255, 204, 0, 0.1); }
-        .tab-btn:hover { color: var(--gold); background: rgba(255, 204, 0, 0.05); }
+        .tab-btn.active { color: var(--gold); box-shadow: 0 0 15px var(--gold); background: rgba(255, 204, 0, 0.1); }
+        .tab-btn:hover { background: rgba(255, 204, 0, 0.05); color: var(--gold); }
 
         .tab-content { display: none; height: calc(100vh - 110px); overflow-y: auto; text-align: center; width: 100%; position: relative; z-index: 11; }
         .tab-content.active { display: block; }
 
-        .vault-logo { font-size: 60px; font-weight: bold; margin-top: 60px; text-shadow: 0 0 20px var(--gold); display: flex; flex-direction: column; align-items: center; }
-        .vault-gear { width: 120px; height: 120px; fill: var(--gold); margin-bottom: 15px; animation: spin 30s linear infinite; filter: drop-shadow(0 0 15px var(--gold)); }
+        .vault-logo { font-size: 50px; font-weight: bold; margin-top: 40px; text-shadow: 0 0 15px var(--gold); display: flex; flex-direction: column; align-items: center; }
+        .vault-gear { width: 100px; height: 100px; fill: var(--gold); margin-bottom: 15px; animation: spin 20s linear infinite; filter: drop-shadow(0 0 10px var(--gold)); }
         @keyframes spin { 100% { transform: rotate(360deg); } }
 
         .terminal-input { 
-            width: 70%; max-width: 700px; background: #000; border: 2px solid var(--gold); 
-            color: var(--gold); padding: 25px; font-size: 24px; font-family: inherit; 
-            outline: none; margin-top: 30px; box-shadow: inset 0 0 15px var(--gold); text-align: center;
+            width: 80%; max-width: 800px; background: #000; border: 2px solid var(--gold); 
+            color: var(--gold); padding: 20px; font-size: 20px; font-family: inherit; 
+            outline: none; margin-top: 20px; box-shadow: inset 0 0 10px var(--gold); text-align: center;
         }
 
-        #vault-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 25px; padding: 40px; }
-        .gold-card { background: #1a1a1a; border: 1px solid var(--gold); padding: 15px; transition: 0.3s; }
-        .gold-card:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(255, 204, 0, 0.4); border-color: #fff; }
+        #vault-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 30px; }
+        .gold-card { background: var(--surface); border: 1px solid var(--gold); padding: 12px; transition: 0.3s; position: relative; }
+        .gold-card:hover { transform: scale(1.03); box-shadow: 0 0 25px rgba(255, 204, 0, 0.5); z-index: 50; border-color: #fff; }
         
-        .init-btn { background: var(--gold); color: #000; border: none; width: 100%; padding: 12px; margin-top: 15px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .card-img { width: 100%; height: 140px; object-fit: cover; border-bottom: 1px solid #333; margin-bottom: 10px; }
+        .init-btn { background: var(--gold); color: #000; border: none; width: 100%; padding: 12px; font-weight: bold; cursor: pointer; transition: 0.2s; }
         .init-btn:hover { background: #fff; box-shadow: 0 0 15px #fff; }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: var(--gold); }
     </style>
 </head>
 <body>
 
     <div id="status-bar">
-        <div id="reactor-clock">REACTOR: 00:00:00</div>
-        <div>VAULT-OS V.7.7 [HOME BRANCH]</div>
-        <div id="battery-status">CELL: 100%</div>
+        <div id="reactor-clock">TIME: --:--:--</div>
+        <div>VAULT-OS V.7.9 [PRODUCTION]</div>
+        <div id="status-tag">SECURE CONNECTION</div>
     </div>
 
     <nav>
@@ -63,92 +60,80 @@
 
     <div id="tab-terminal" class="tab-content active">
         <div class="vault-logo">
-            <svg class="vault-gear" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.06-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.73,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.06,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.49-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
-            </svg>
-            [ VAULT ]
+            <svg class="vault-gear" viewBox="0 0 24 24"><path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.06-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.73,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.06,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.49-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/></svg>
+            VAULT-OS
         </div>
-        <p>ENCRYPTED WEB ACCESS</p>
-        <input type="text" id="proxy-input" class="terminal-input" placeholder=">_ ENTER URL OR SEARCH..." autocomplete="off">
+        <p>DUCKDUCKGO ENCRYPTED SEARCH</p>
+        <input type="text" id="proxy-input" class="terminal-input" placeholder=">_ SEARCH OR ENTER URL..." autocomplete="off">
     </div>
 
     <div id="tab-vault" class="tab-content">
-        <div id="vault-grid"><p>CONNECTING TO ARCHIVE SERVER...</p></div>
+        <div id="vault-grid"><p>CONNECTING TO SERVER...</p></div>
     </div>
 
     <script>
         function updateUI() {
             const now = new Date();
-            document.getElementById('reactor-clock').innerText = `REACTOR: ${now.toTimeString().split(' ')[0]}`;
+            document.getElementById('reactor-clock').innerText = `TIME: ${now.toLocaleTimeString()}`;
         }
         setInterval(updateUI, 1000);
 
         function switchTab(type) {
-            document.getElementById('tab-terminal').classList.remove('active');
-            document.getElementById('tab-vault').classList.remove('active');
-            document.getElementById('btn-term').classList.remove('active');
-            document.getElementById('btn-vault').classList.remove('active');
-
-            if (type === 'terminal') {
-                document.getElementById('tab-terminal').classList.add('active');
-                document.getElementById('btn-term').classList.add('active');
-            } else {
-                document.getElementById('tab-vault').classList.add('active');
-                document.getElementById('btn-vault').classList.add('active');
-                loadVault();
-            }
+            document.querySelectorAll('.tab-content, .tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(`tab-${type}`).classList.add('active');
+            document.getElementById(`btn-${type === 'terminal' ? 'term' : 'vault'}`).classList.add('active');
+            if (type === 'vault') loadVault();
         }
 
-        // STEALTH CLOAKER
-        function cloak(targetUrl) {
-            let win = window.open('about:blank', '_blank');
-            if (!win) {
-                alert("POP-UP BLOCKED!");
-                return;
-            }
+        function cloak(url) {
+            const win = window.open('about:blank', '_blank');
+            if (!win) return alert("Pop-up blocked!");
+            
             win.document.body.style.margin = "0";
             win.document.body.style.height = "100vh";
             win.document.body.style.backgroundColor = "#000";
-            win.document.body.style.overflow = "hidden";
-            
-            let iframe = win.document.createElement('iframe');
-            iframe.style.border = "none";
+
+            const iframe = win.document.createElement('iframe');
             iframe.style.width = "100%";
             iframe.style.height = "100%";
-            iframe.src = targetUrl;
+            iframe.style.border = "none";
+            // Referrer policy helps bypass some simple blocks
+            iframe.referrerPolicy = "no-referrer";
+            iframe.src = url;
             win.document.body.appendChild(iframe);
         }
 
         document.getElementById('proxy-input').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
-                let val = e.target.value.trim();
+                const val = e.target.value.trim();
                 if (!val) return;
-                let target = val.includes('.') ? (val.startsWith('http') ? val : `https://${val}`) : `https://www.google.com/search?q=${encodeURIComponent(val)}`;
-                window.open(target, '_blank'); 
+                // If it's a URL, go there. Otherwise, search DuckDuckGo.
+                const target = val.includes('.') ? (val.startsWith('http') ? val : `https://${val}`) : `https://duckduckgo.com/?q=${encodeURIComponent(val)}&kp=-1&kl=us-en`;
+                cloak(target);
             }
         });
 
         async function loadVault() {
             const grid = document.getElementById('vault-grid');
-            // Points directly to the raw file in your repo
-            const jsonUrl = 'https://raw.githubusercontent.com/chillyvr84569-lab/district-resource-archive/main/games.json';
+            // Using the RAW github path to ensure the file is always found
+            const repoPath = 'https://raw.githubusercontent.com/chillyvr84569-lab/district-resource-archive/main/games.json';
             
             try {
-                const res = await fetch(jsonUrl);
-                if (!res.ok) throw new Error('Archive inaccessible');
+                const res = await fetch(repoPath + '?v=' + Math.random());
+                if (!res.ok) throw new Error('OFFLINE');
                 const data = await res.json();
-                grid.innerHTML = data.map(item => `
+                
+                grid.innerHTML = data.map(game => `
                     <div class="gold-card">
-                        <img src="${item.thumb}" style="width:100%; height: 130px; object-fit: cover; border-bottom: 1px solid var(--gold);" onerror="this.src='https://placehold.co/200x120?text=NO+SIGNAL'">
-                        <div style="padding:10px 0;">${item.title}</div>
-                        <button class="init-btn" onclick="cloak('${item.url}')">INITIALIZE</button>
+                        <img class="card-img" src="${game.thumb}" onerror="this.src='https://via.placeholder.com/250x140/1a1a1a/ffcc00?text=LOAD_ERROR'">
+                        <div style="font-size: 14px; margin-bottom: 10px;">${game.title}</div>
+                        <button class="init-btn" onclick="cloak('${game.url}')">INITIALIZE</button>
                     </div>
                 `).join('');
             } catch (err) {
-                grid.innerHTML = `<p style="color:red">CRITICAL ERROR: ${err.message}</p>`;
+                grid.innerHTML = `<div style="color:red; padding: 40px;">VAULT OFFLINE: RE-UPLOAD GAMES.JSON</div>`;
             }
         }
-        updateUI();
     </script>
 </body>
 </html>
