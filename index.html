@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vault-OS V.8.1 | AUTHORIZED</title>
+    <title>Vault-OS V.8.3 | AUTHORIZED</title>
     <style>
         :root { --gold: #ffcc00; --bg: #050505; --surface: #111; }
         body { margin: 0; background: var(--bg); color: var(--gold); font-family: 'Courier New', monospace; overflow: hidden; text-transform: uppercase; }
         
-        /* SCANLINES & OVERLAY */
+        /* CRT SCREEN EFFECTS */
         body::before {
             content: " "; display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), 
@@ -19,38 +19,38 @@
         #status-bar { display: flex; justify-content: space-between; padding: 10px 20px; border-bottom: 2px solid var(--gold); background: #000; font-size: 11px; position: relative; z-index: 11;}
         nav { display: flex; justify-content: center; padding: 10px; background: #000; border-bottom: 1px solid #222; position: relative; z-index: 11;}
         
-        .tab-btn { background: none; border: 1px solid var(--gold); color: #665200; padding: 10px 30px; cursor: pointer; font-family: inherit; margin: 0 5px; transition: 0.3s; }
+        .tab-btn { background: none; border: 1px solid var(--gold); color: #665200; padding: 10px 30px; cursor: pointer; font-family: inherit; margin: 0 5px; transition: 0.3s; font-weight: bold; }
         .tab-btn.active { color: var(--gold); box-shadow: 0 0 15px var(--gold); background: rgba(255, 204, 0, 0.1); border-color: #fff; }
 
         .tab-content { display: none; height: calc(100vh - 110px); overflow-y: auto; text-align: center; width: 100%; position: relative; z-index: 11; }
         .tab-content.active { display: block; }
 
         /* SEARCH TERMINAL */
-        .glitch { font-size: 40px; font-weight: bold; margin-top: 15vh; text-shadow: 2px 2px var(--gold); }
+        .glitch-header { font-size: 40px; font-weight: bold; margin-top: 15vh; text-shadow: 2px 2px var(--gold); }
         .terminal-input { 
             width: 60%; background: transparent; border: none; border-bottom: 2px solid var(--gold);
             color: var(--gold); padding: 15px; font-size: 20px; font-family: inherit; 
             outline: none; margin-top: 30px; text-align: center;
         }
 
-        /* VAULT GRID */
+        /* THE VAULT GRID */
         #vault-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; padding: 30px; }
-        .gold-card { background: var(--surface); border: 1px solid #333; transition: 0.3s; overflow: hidden; }
-        .gold-card:hover { border-color: var(--gold); box-shadow: 0 0 20px var(--gold); }
+        .gold-card { background: var(--surface); border: 1px solid #333; transition: 0.3s; overflow: hidden; position: relative; }
+        .gold-card:hover { border-color: var(--gold); box-shadow: 0 0 25px var(--gold); transform: translateY(-5px); }
         .card-img { width: 100%; height: 140px; object-fit: cover; border-bottom: 1px solid var(--gold); }
-        .init-btn { background: var(--gold); color: #000; border: none; width: 100%; padding: 12px; font-weight: bold; cursor: pointer; }
+        .init-btn { background: var(--gold); color: #000; border: none; width: 100%; padding: 12px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .init-btn:hover { background: #fff; letter-spacing: 1px; }
 
-        /* BATTERY & CREDITS */
-        .sys-info { color: #555; font-size: 10px; margin-top: 10px; }
-        #batt-icon { color: #00ff00; }
+        .sys-credits { color: #444; font-size: 11px; margin-top: 30px; letter-spacing: 3px; }
+        #batt-icon { color: #00ff00; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div id="status-bar">
-        <div>USER: CHILLYVR84569</div>
-        <div>VAULT-OS // RTX-3060_LINKED</div>
-        <div id="batt-info">BATT: <span id="batt-icon">--%</span></div>
+        <div id="live-clock">00:00:00 AM</div>
+        <div style="letter-spacing: 3px; font-weight: bold; color: #fff;">ARCHIVE HOST: CHILLYVR84569</div>
+        <div id="batt-info">PWR: <span id="batt-icon">100%</span></div>
     </div>
 
     <nav>
@@ -59,28 +59,48 @@
     </nav>
 
     <div id="tab-terminal" class="tab-content active">
-        <div class="glitch">[ ACCESS_POINT ]</div>
-        <input type="text" id="proxy-input" class="terminal-input" placeholder="ENTER URL OR SEARCH..." autocomplete="off" autofocus>
-        <div class="sys-info">ARCHIVE DEVELOPED BY: CHILLYVR84569</div>
+        <div class="glitch-header">[ SECURE_PROXY ]</div>
+        <input type="text" id="proxy-input" class="terminal-input" placeholder="INPUT URL OR SEARCH QUERY..." autocomplete="off" autofocus>
+        <div class="sys-credits">ENGINEERED BY CHILLYVR84569 // ALL RIGHTS RESERVED</div>
     </div>
 
     <div id="tab-vault" class="tab-content">
-        <div id="vault-grid"><p>SCANNING ARCHIVES...</p></div>
+        <div id="vault-grid"><p>CHILLY_VR PROTOCOL INITIALIZING...</p></div>
     </div>
 
     <script>
-        // BATTERY LOGIC
-        if (navigator.getBattery) {
-            navigator.getBattery().then(battery => {
-                const update = () => {
-                    document.getElementById('batt-icon').innerText = `${Math.round(battery.level * 100)}% ${battery.charging ? '⚡' : ''}`;
-                    document.getElementById('batt-icon').style.color = battery.level < 0.2 ? '#ff0000' : '#00ff00';
-                };
-                update();
-                battery.addEventListener('levelchange', update);
-                battery.addEventListener('chargingchange', update);
-            });
+        // CLOCK
+        function updateStatus() {
+            const now = new Date();
+            document.getElementById('live-clock').innerText = now.toLocaleTimeString();
         }
+        setInterval(updateStatus, 1000);
+        updateStatus();
+
+        // CLOAKING ENGINE
+        function launchCloaked(url) {
+            const win = window.open('about:blank', '_blank');
+            if (!win) return alert("SYSTEM BLOCKED: ENABLE POPUPS TO LAUNCH");
+
+            win.document.body.style.margin = "0";
+            win.document.body.style.height = "100vh";
+            win.document.body.style.backgroundColor = "#000";
+
+            const iframe = win.document.createElement('iframe');
+            iframe.style = "width:100%; height:100%; border:none; overflow:hidden;";
+            iframe.referrerPolicy = "no-referrer";
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+        }
+
+        document.getElementById('proxy-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const val = e.target.value.trim();
+                if (!val) return;
+                const url = val.includes('.') ? (val.startsWith('http') ? val : `https://${val}`) : `https://duckduckgo.com/?q=${encodeURIComponent(val)}&kp=-1`;
+                launchCloaked(url);
+            }
+        });
 
         function switchTab(type) {
             document.querySelectorAll('.tab-content, .tab-btn').forEach(el => el.classList.remove('active'));
@@ -89,44 +109,33 @@
             if (type === 'vault') loadVault();
         }
 
-        // THE "STEALTH" CLOAK (Fixes 99% of broken sites/games)
-        function cloak(url) {
-            const win = window.open('about:blank', '_blank');
-            if (!win) return alert("ENABLE POPUPS TO INITIALIZE");
-            win.document.body.style.margin = "0";
-            win.document.body.style.height = "100vh";
-            const iframe = win.document.createElement('iframe');
-            iframe.style = "width:100%; height:100%; border:none;";
-            iframe.referrerPolicy = "no-referrer"; // Bypasses many school filters
-            iframe.src = url;
-            win.document.body.appendChild(iframe);
-        }
-
-        document.getElementById('proxy-input').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const val = e.target.value.trim();
-                // DuckDuckGo Proxy logic
-                const url = val.includes('.') ? (val.startsWith('http') ? val : `https://${val}`) : `https://duckduckgo.com/?q=${encodeURIComponent(val)}&kp=-1`;
-                cloak(url);
-            }
-        });
-
         async function loadVault() {
             const grid = document.getElementById('vault-grid');
-            const repoPath = 'https://raw.githubusercontent.com/chillyvr84569-lab/district-resource-archive/main/games.json';
-            const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffcc00'%3E%3Cpath d='M12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5zm10.5-3.5c0-.33-.02-.66-.06-.98l2.03-1.58-1.93-3.34-2.4.97c-.5-.38-1.04-.7-1.63-.95l-.36-2.54h-3.86l-.36 2.54c-.59.24-1.13.57-1.63.95l-2.4-.97-1.93 3.34 2.03 1.58c-.04.32-.06.65-.06.98s.02.66.06.98l-2.03 1.58 1.93 3.34 2.4-.97c.5.38 1.04.7 1.63.95l.36 2.54h3.86l.36-2.54c.59-.24 1.13-.57 1.63-.95l2.4.97 1.93-3.34-2.03-1.58c.04-.32.06-.65.06-.98z'/%3E%3C/svg%3E";
             
-            try {
-                const res = await fetch(repoPath + '?v=' + Math.random());
-                const data = await res.json();
-                grid.innerHTML = data.map(game => `
-                    <div class="gold-card">
-                        <img class="card-img" src="${game.thumb}" onerror="this.src='${placeholder}'">
-                        <div style="padding:10px; font-size:12px; font-weight:bold;">${game.title}</div>
-                        <button class="init-btn" onclick="cloak('${game.url}')">BOOT_GAME</button>
-                    </div>
-                `).join('');
-            } catch (err) { grid.innerHTML = `<p style="color:red">ERROR: ARCHIVE_NOT_FOUND</p>`; }
+            // Tries local path first (for Vercel), then GitHub raw path as a backup
+            const paths = [
+                './games.json', 
+                'https://raw.githubusercontent.com/chillyvr84569-lab/district-resource-archive/main/games.json'
+            ];
+            
+            const fallback = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffcc00'%3E%3Cpath d='M12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5zm10.5-3.5c0-.33-.02-.66-.06-.98l2.03-1.58-1.93-3.34-2.4.97c-.5-.38-1.04-.7-1.63-.95l-.36-2.54h-3.86l-.36 2.54c-.59.24-1.13.57-1.63.95l-2.4-.97-1.93 3.34 2.03 1.58c-.04.32-.06.65-.06.98s.02.66.06.98l-2.03 1.58 1.93 3.34 2.4-.97c.5.38 1.04.7 1.63.95l.36 2.54h3.86l.36-2.54c.59-.24 1.13-.57 1.63-.95l2.4.97 1.93-3.34-2.03-1.58c.04-.32.06-.65.06-.98z'/%3E%3C/svg%3E";
+            
+            for (let path of paths) {
+                try {
+                    const res = await fetch(path + '?nocache=' + Date.now());
+                    if (!res.ok) continue;
+                    const data = await res.json();
+                    grid.innerHTML = data.map(game => `
+                        <div class="gold-card">
+                            <img class="card-img" src="${game.thumb}" onerror="this.src='${fallback}'">
+                            <div style="padding:15px; font-size:13px; font-weight:bold;">${game.title}</div>
+                            <button class="init-btn" onclick="launchCloaked('${game.url}')">INITIALIZE</button>
+                        </div>
+                    `).join('');
+                    return; // Stop if successful
+                } catch (err) { console.log("Trying next path..."); }
+            }
+            grid.innerHTML = `<div style="color:red; padding:50px;">ERROR: DATA STREAM OFFLINE</div>`;
         }
     </script>
 </body>
