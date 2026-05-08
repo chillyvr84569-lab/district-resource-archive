@@ -2,141 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vault-OS V.8.3 | AUTHORIZED</title>
+    <title>THE VAULT | OS v9.0</title>
     <style>
-        :root { --gold: #ffcc00; --bg: #050505; --surface: #111; }
-        body { margin: 0; background: var(--bg); color: var(--gold); font-family: 'Courier New', monospace; overflow: hidden; text-transform: uppercase; }
+        :root { --gold: #ffcc00; --dark: #0a0a0a; --gray: #1a1a1a; --text: #e0e0e0; }
+        body { background: var(--dark); color: var(--text); font-family: 'Courier New', monospace; margin: 0; overflow-x: hidden; }
         
-        /* CRT SCREEN EFFECTS */
-        body::before {
-            content: " "; display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), 
-                        radial-gradient(circle, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%);
-            z-index: 100; pointer-events: none;
-        }
+        /* THE GHOST SHELL SEARCH */
+        .header { background: #000; padding: 20px; border-bottom: 2px solid var(--gold); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        #ghost-search { background: transparent; border: 1px solid #333; color: var(--gold); padding: 10px; width: 300px; font-size: 14px; outline: none; transition: 0.3s; }
+        #ghost-search:focus { border-color: var(--gold); box-shadow: 0 0 10px var(--gold); width: 400px; }
 
-        #status-bar { display: flex; justify-content: space-between; padding: 10px 20px; border-bottom: 2px solid var(--gold); background: #000; font-size: 11px; position: relative; z-index: 11;}
-        nav { display: flex; justify-content: center; padding: 10px; background: #000; border-bottom: 1px solid #222; position: relative; z-index: 11;}
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding: 20px; }
+        .card { background: var(--gray); border: 1px solid #333; transition: 0.3s; overflow: hidden; position: relative; }
+        .card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255, 204, 0, 0.2); }
         
-        .tab-btn { background: none; border: 1px solid var(--gold); color: #665200; padding: 10px 30px; cursor: pointer; font-family: inherit; margin: 0 5px; transition: 0.3s; font-weight: bold; }
-        .tab-btn.active { color: var(--gold); box-shadow: 0 0 15px var(--gold); background: rgba(255, 204, 0, 0.1); border-color: #fff; }
+        /* THUMBNAIL FALLBACK */
+        .thumb { width: 100%; height: 120px; background: #111; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .vault-door { width: 50px; height: 50px; border: 4px dashed #333; border-radius: 50%; }
 
-        .tab-content { display: none; height: calc(100vh - 110px); overflow-y: auto; text-align: center; width: 100%; position: relative; z-index: 11; }
-        .tab-content.active { display: block; }
-
-        /* SEARCH TERMINAL */
-        .glitch-header { font-size: 40px; font-weight: bold; margin-top: 15vh; text-shadow: 2px 2px var(--gold); }
-        .terminal-input { 
-            width: 60%; background: transparent; border: none; border-bottom: 2px solid var(--gold);
-            color: var(--gold); padding: 15px; font-size: 20px; font-family: inherit; 
-            outline: none; margin-top: 30px; text-align: center;
-        }
-
-        /* THE VAULT GRID */
-        #vault-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; padding: 30px; }
-        .gold-card { background: var(--surface); border: 1px solid #333; transition: 0.3s; overflow: hidden; position: relative; }
-        .gold-card:hover { border-color: var(--gold); box-shadow: 0 0 25px var(--gold); transform: translateY(-5px); }
-        .card-img { width: 100%; height: 140px; object-fit: cover; border-bottom: 1px solid var(--gold); }
-        .init-btn { background: var(--gold); color: #000; border: none; width: 100%; padding: 12px; font-weight: bold; cursor: pointer; transition: 0.2s; }
-        .init-btn:hover { background: #fff; letter-spacing: 1px; }
-
-        .sys-credits { color: #444; font-size: 11px; margin-top: 30px; letter-spacing: 3px; }
-        #batt-icon { color: #00ff00; font-weight: bold; }
+        .info { padding: 10px; font-size: 12px; }
+        .btn-init { background: var(--gold); color: #000; border: none; width: 100%; padding: 8px; cursor: pointer; font-weight: bold; margin-top: 5px; }
+        
+        .footer { padding: 10px; font-size: 10px; text-align: center; border-top: 1px solid #222; margin-top: 20px; opacity: 0.6; }
     </style>
 </head>
 <body>
 
-    <div id="status-bar">
-        <div id="live-clock">00:00:00 AM</div>
-        <div style="letter-spacing: 3px; font-weight: bold; color: #fff;">ARCHIVE HOST: CHILLYVR84569</div>
-        <div id="batt-info">PWR: <span id="batt-icon">100%</span></div>
+<div class="header">
+    <div style="font-weight: bold; color: var(--gold);">VAULT-OS // <span id="sys-info">3060_ONLINE</span></div>
+    <input type="text" id="ghost-search" placeholder="GHOST_SHELL: SEARCH ARCHIVE...">
+</div>
+
+<div class="grid" id="game-grid">
     </div>
 
-    <nav>
-        <button id="btn-term" class="tab-btn active" onclick="switchTab('terminal')">TERMINAL</button>
-        <button id="btn-vault" class="tab-btn" onclick="switchTab('vault')">THE VAULT</button>
-    </nav>
+<div class="footer">
+    SYSTEM ARCHITECT: drewski | BUILT FOR THE DISTRICT RESOURCE ARCHIVE
+</div>
 
-    <div id="tab-terminal" class="tab-content active">
-        <div class="glitch-header">[ SECURE_PROXY ]</div>
-        <input type="text" id="proxy-input" class="terminal-input" placeholder="INPUT URL OR SEARCH QUERY..." autocomplete="off" autofocus>
-        <div class="sys-credits">ENGINEERED BY CHILLYVR84569 // ALL RIGHTS RESERVED</div>
-    </div>
+<script>
+    const grid = document.getElementById('game-grid');
+    const search = document.getElementById('ghost-search');
+    let gameData = [];
 
-    <div id="tab-vault" class="tab-content">
-        <div id="vault-grid"><p>CHILLY_VR PROTOCOL INITIALIZING...</p></div>
-    </div>
-
-    <script>
-        // CLOCK
-        function updateStatus() {
-            const now = new Date();
-            document.getElementById('live-clock').innerText = now.toLocaleTimeString();
+    // FIX: Trying multiple potential filenames to avoid 404
+    async function loadArchive() {
+        const filenames = ['games (1).json', 'games.json'];
+        for (let name of filenames) {
+            try {
+                const response = await fetch(name);
+                if (response.ok) {
+                    gameData = await response.json();
+                    renderArchive(gameData);
+                    console.log(`[SUCCESS] Archive loaded via ${name}`);
+                    return;
+                }
+            } catch (e) { continue; }
         }
-        setInterval(updateStatus, 1000);
-        updateStatus();
+        grid.innerHTML = `<div style="color:red">ERROR: ARCHIVE NOT FOUND. Ensure your JSON file is in the same folder.</div>`;
+    }
 
-        // CLOAKING ENGINE
-        function launchCloaked(url) {
-            const win = window.open('about:blank', '_blank');
-            if (!win) return alert("SYSTEM BLOCKED: ENABLE POPUPS TO LAUNCH");
-
-            win.document.body.style.margin = "0";
-            win.document.body.style.height = "100vh";
-            win.document.body.style.backgroundColor = "#000";
-
-            const iframe = win.document.createElement('iframe');
-            iframe.style = "width:100%; height:100%; border:none; overflow:hidden;";
-            iframe.referrerPolicy = "no-referrer";
-            iframe.src = url;
-            win.document.body.appendChild(iframe);
-        }
-
-        document.getElementById('proxy-input').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const val = e.target.value.trim();
-                if (!val) return;
-                const url = val.includes('.') ? (val.startsWith('http') ? val : `https://${val}`) : `https://duckduckgo.com/?q=${encodeURIComponent(val)}&kp=-1`;
-                launchCloaked(url);
-            }
+    function renderArchive(data) {
+        grid.innerHTML = '';
+        data.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            // FIX: Using an error handler for broken thumbnails
+            card.innerHTML = `
+                <div class="thumb">
+                    <img src="${item.thumb}" onerror="this.outerHTML='<div class=\'vault-door\'></div>'">
+                </div>
+                <div class="info">
+                    <div style="color:var(--gold); margin-bottom:4px;">#${item.id}</div>
+                    <div style="white-space:nowrap; overflow:hidden;">${item.title}</div>
+                    <button class="btn-init" onclick="launchGame('${item.url}')">INITIALIZE</button>
+                </div>
+            `;
+            grid.appendChild(card);
         });
+    }
 
-        function switchTab(type) {
-            document.querySelectorAll('.tab-content, .tab-btn').forEach(el => el.classList.remove('active'));
-            document.getElementById(`tab-${type}`).classList.add('active');
-            document.getElementById(`btn-${type === 'terminal' ? 'term' : 'vault'}`).classList.add('active');
-            if (type === 'vault') loadVault();
-        }
+    // STEALTH LAUNCH (Bypasses some iFrame blocks)
+    function launchGame(url) {
+        const win = window.open('about:blank', '_blank');
+        const iframe = win.document.createElement('iframe');
+        iframe.style.width = '100%'; iframe.style.height = '100%';
+        iframe.style.border = 'none'; iframe.src = url;
+        win.document.body.style.margin = '0';
+        win.document.body.appendChild(iframe);
+    }
 
-        async function loadVault() {
-            const grid = document.getElementById('vault-grid');
-            
-            // Tries local path first (for Vercel), then GitHub raw path as a backup
-            const paths = [
-                './games.json', 
-                'https://raw.githubusercontent.com/chillyvr84569-lab/district-resource-archive/main/games.json'
-            ];
-            
-            const fallback = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffcc00'%3E%3Cpath d='M12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5zm10.5-3.5c0-.33-.02-.66-.06-.98l2.03-1.58-1.93-3.34-2.4.97c-.5-.38-1.04-.7-1.63-.95l-.36-2.54h-3.86l-.36 2.54c-.59.24-1.13.57-1.63.95l-2.4-.97-1.93 3.34 2.03 1.58c-.04.32-.06.65-.06.98s.02.66.06.98l-2.03 1.58 1.93 3.34 2.4-.97c.5.38 1.04.7 1.63.95l.36 2.54h3.86l.36-2.54c.59-.24 1.13-.57 1.63-.95l2.4.97 1.93-3.34-2.03-1.58c.04-.32.06-.65.06-.98z'/%3E%3C/svg%3E";
-            
-            for (let path of paths) {
-                try {
-                    const res = await fetch(path + '?nocache=' + Date.now());
-                    if (!res.ok) continue;
-                    const data = await res.json();
-                    grid.innerHTML = data.map(game => `
-                        <div class="gold-card">
-                            <img class="card-img" src="${game.thumb}" onerror="this.src='${fallback}'">
-                            <div style="padding:15px; font-size:13px; font-weight:bold;">${game.title}</div>
-                            <button class="init-btn" onclick="launchCloaked('${game.url}')">INITIALIZE</button>
-                        </div>
-                    `).join('');
-                    return; // Stop if successful
-                } catch (err) { console.log("Trying next path..."); }
-            }
-            grid.innerHTML = `<div style="color:red; padding:50px;">ERROR: DATA STREAM OFFLINE</div>`;
-        }
-    </script>
+    // SEARCH LOGIC
+    search.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        const filtered = gameData.filter(g => 
+            g.title.toLowerCase().includes(term) || 
+            g.id.toString().includes(term)
+        );
+        renderArchive(filtered);
+    });
+
+    loadArchive();
+</script>
+
 </body>
 </html>
