@@ -1,1 +1,56 @@
-
+[
+  {
+    "title": "Minecraft 1.8.8 (Eaglercraft)",
+    "url": "https://eaglercraft.com/mc/1.8.8/",
+    "thumb": "https://raw.githubusercontent.com/Dex7er/Eaglercraft/main/logo.png",
+    "category": "Sandbox"
+  },
+  {
+    "title": "Slope",
+    "url": "https://kdata1.com/2020/05/slope/",
+    "thumb": "https://play-lh.googleusercontent.com/u772Y6v9L_N66C7UvL4_N9-U1bXF9_b5yG_v_N",
+    "category": "Action"
+  },
+  {
+    "title": "1v1.LOL",
+    "url": "https://1v1.lol/",
+    "thumb": "https://play-lh.googleusercontent.com/6S3Xv8B_T6fS0V5f4jF_V7W9",
+    "category": "FPS"
+  },
+  {
+    "title": "Retro Bowl",
+    "url": "https://game.retrobowl.io/",
+    "thumb": "https://play-lh.googleusercontent.com/3p8_9L5Z_Z_G_V_X_Z_G",
+    "category": "Sports"
+  },
+  {
+    "title": "BitLife",
+    "url": "https://bitlifeonline.com/game/",
+    "thumb": "https://play-lh.googleusercontent.com/8_X_Z_G_V_X_Z_G_V_X",
+    "category": "Simulation"
+  },
+  {
+    "title": "Cookie Clicker",
+    "url": "https://orteil.dashnet.org/cookieclicker/",
+    "thumb": "https://orteil.dashnet.org/cookieclicker/img/shadedBorders.png",
+    "category": "Idle"
+  },
+  {
+    "title": "Friday Night Funkin'",
+    "url": "https://ninja-muffin24.itch.io/funkin",
+    "thumb": "https://img.itch.zone/aW1nLzQ0ODU1MjgucG5n/315x250%23c/8pYmXj.png",
+    "category": "Music"
+  },
+  {
+    "title": "Tunnel Rush",
+    "url": "https://poki.com/en/g/tunnel-rush",
+    "thumb": "https://img.poki.com/dg/tunnel-rush-2.png",
+    "category": "Action"
+  },
+  {
+    "title": "Subway Surfers",
+    "url": "https://poki.com/en/g/subway-surfers",
+    "thumb": "https://img.poki.com/dg/subway-surfers.png",
+    "category": "Arcade"
+  }
+]
